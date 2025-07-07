@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Sarah Mitchell | CareConnect AI Counselor</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f7fafd; margin: 0; padding: 0; }
+    .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(42,77,105,0.08); padding: 32px 24px; }
+    .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #b6e3f4; background: #eaf6fb; display: block; margin: 0 auto 10px auto; }
+    .animated-avatar { width: 56px; height: 56px; border-radius: 50%; background: #f0f8ff; border: 2px solid #e6f3ff; display: block; margin: 0 auto 16px auto; }
+    h1 { text-align: center; color: #2a4d69; margin-bottom: 4px; }
+    .title, .specialization, .desc, .languages, .credentials, .personality { text-align: center; margin-bottom: 8px; }
+    .title { color: #4f6d7a; font-size: 1.1rem; }
+    .specialization { color: #7a92a3; font-size: 1rem; }
+    .desc { color: #3d4d5c; font-size: 1.05rem; margin-bottom: 16px; }
+    .languages, .credentials { color: #7a92a3; font-size: 0.95rem; }
+    .personality { color: #4f6d7a; font-size: 0.97rem; margin-bottom: 18px; }
+    .chat-form { background: #f0f8ff; border-radius: 10px; padding: 18px 14px; margin-top: 24px; }
+    .chat-form label { display: block; margin-bottom: 6px; color: #2a4d69; font-weight: 500; }
+    .chat-form textarea { width: 100%; min-height: 60px; border-radius: 6px; border: 1px solid #b6e3f4; padding: 8px; font-size: 1rem; margin-bottom: 10px; }
+    .chat-form button { background: #2a4d69; color: #fff; border: none; border-radius: 6px; padding: 10px 22px; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+    .chat-form button:hover { background: #1b3147; }
+    .response { background: #eaf6fb; border-radius: 8px; padding: 12px; margin-top: 16px; color: #2a4d69; }
+    .back-link { display: block; text-align: center; margin-top: 18px; color: #2a4d69; text-decoration: none; font-size: 1rem; }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="avatar" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face" alt="Dr. Sarah Mitchell">
+    <img class="animated-avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=DrSarahMitchell&backgroundColor=b6e3f4&mouth=smile&style=circle" alt="Animated Dr. Sarah Mitchell">
+    <h1>Dr. Sarah Mitchell</h1>
+    <div class="title">Licensed Clinical Psychologist</div>
+    <div class="specialization">Specialization: Mental Health</div>
+    <div class="desc">Professional headshot of Dr. Sarah Mitchell, a warm and empathetic clinical psychologist with kind eyes and a gentle smile</div>
+    <div class="languages">Languages: English, Spanish</div>
+    <div class="credentials">Ph.D. Clinical Psychology, Licensed Psychologist, CBT Certified</div>
+    <div class="personality"><b>Approach:</b> warm and empathetic<br><b>Style:</b> CBT-focused with mindfulness integration<br><b>Strengths:</b> anxiety disorders, depression, trauma therapy</div>
+    <form class="chat-form" id="chatForm">
+      <label for="message">Send a message to Dr. Sarah Mitchell:</label>
+      <textarea id="message" name="message" required placeholder="Type your message..."></textarea>
+      <button type="submit">Send</button>
+      <div class="response" id="response" style="display:none;"></div>
+    </form>
+    <a class="back-link" href="counselor-gallery.html">&larr; Back to Gallery</a>
+  </div>
+  <script>
+    document.getElementById('chatForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const message = document.getElementById('message').value;
+      const responseDiv = document.getElementById('response');
+      responseDiv.style.display = 'none';
+      responseDiv.textContent = '';
+      try {
+        const res = await fetch('/api/chat/mental-health', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message, language: 'en' })
+        });
+        const data = await res.json();
+        if (data.response) {
+          responseDiv.textContent = data.response;
+        } else if (data.error) {
+          responseDiv.textContent = 'Error: ' + data.error;
+        } else {
+          responseDiv.textContent = 'No response from AI.';
+        }
+        responseDiv.style.display = 'block';
+      } catch (err) {
+        responseDiv.textContent = 'Network error.';
+        responseDiv.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html> 

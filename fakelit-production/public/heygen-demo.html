@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeyGen Avatar Demo - CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="/styles/heygen-avatar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Fakelit.com - Professional hosting, domain management, and web development services. Las Vegas based hosting company with 24/7 support.">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                <span class="logo-text">CareConnect</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/counselors" class="nav-link">Counselors</a>
+                <a href="/lifelike-demo.html" class="nav-link">Lifelike Demo</a>
+                <a href="/heygen-demo.html" class="nav-link active">HeyGen Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header -->
+            <header class="demo-header">
+                <h1>🎭 HeyGen Avatar Demo</h1>
+                <p>Experience the future of AI counseling with ultra-realistic HeyGen avatars featuring real-time streaming, emotional expressions, and natural voice synthesis.</p>
+                <div class="demo-badges">
+                    <span class="badge">
+                        <i class="fas fa-video"></i>
+                        Real-time Streaming
+                    </span>
+                    <span class="badge">
+                        <i class="fas fa-microphone"></i>
+                        Voice Synthesis
+                    </span>
+                    <span class="badge">
+                        <i class="fas fa-smile"></i>
+                        Emotional AI
+                    </span>
+                    <span class="badge">
+                        <i class="fas fa-brain"></i>
+                        Context Aware
+                    </span>
+                </div>
+            </header>
+
+            <!-- Counselor Selection -->
+            <section class="counselor-selection">
+                <h2>Choose Your Professional Counselor</h2>
+                <p>Each counselor has a unique personality, expertise, and voice tailored to different therapeutic approaches.</p>
+                
+                <div class="counselor-grid">
+                    <div class="counselor-card" data-counselor="dr-sarah-mitchell">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/dr-sarah-mitchell.jpg" alt="Dr. Sarah Mitchell">
+                            <div class="counselor-overlay">
+                                <div class="counselor-specialty">Mental Health & CBT</div>
+                            </div>
+                        </div>
+                        <div class="counselor-info">
+                            <h3>Dr. Sarah Mitchell</h3>
+                            <p class="counselor-description">Licensed clinical psychologist with 15+ years experience in anxiety, depression, and trauma therapy.</p>
+                            <div class="counselor-traits">
+                                <span class="trait">Professional</span>
+                                <span class="trait">Empathetic</span>
+                                <span class="trait">Warm</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary select-counselor">
+                            <i class="fas fa-user-md"></i>
+                            Select Dr. Mitchell
+                        </button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="michael-rodriguez">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/michael-rodriguez.jpg" alt="Michael Rodriguez">
+                            <div class="counselor-overlay">
+                                <div class="counselor-specialty">Substance Abuse & Recovery</div>
+                            </div>
+                        </div>
+                        <div class="counselor-info">
+                            <h3>Michael Rodriguez</h3>
+                            <p class="counselor-description">Certified addiction counselor with expertise in recovery support and relapse prevention.</p>
+                            <div class="counselor-traits">
+                                <span class="trait">Supportive</span>
+                                <span class="trait">Understanding</span>
+                                <span class="trait">Motivational</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary select-counselor">
+                            <i class="fas fa-user-md"></i>
+                            Select Michael
+                        </button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="dr-emily-chen">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/dr-emily-chen.jpg" alt="Dr. Emily Chen">
+                            <div class="counselor-overlay">
+                                <div class="counselor-specialty">Relationships & Family</div>
+                            </div>
+                        </div>
+                        <div class="counselor-info">
+                            <h3>Dr. Emily Chen</h3>
+                            <p class="counselor-description">Marriage and family therapist with deep expertise in communication and conflict resolution.</p>
+                            <div class="counselor-traits">
+                                <span class="trait">Gentle</span>
+                                <span class="trait">Caring</span>
+                                <span class="trait">Insightful</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary select-counselor">
+                            <i class="fas fa-user-md"></i>
+                            Select Dr. Chen
+                        </button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="james-williams">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/james-williams.jpg" alt="James Williams">
+                            <div class="counselor-overlay">
+                                <div class="counselor-specialty">Career & Life Coaching</div>
+                            </div>
+                        </div>
+                        <div class="counselor-info">
+                            <h3>James Williams</h3>
+                            <p class="counselor-description">Professional life coach with background in organizational psychology and career development.</p>
+                            <div class="counselor-traits">
+                                <span class="trait">Confident</span>
+                                <span class="trait">Motivational</span>
+                                <span class="trait">Practical</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary select-counselor">
+                            <i class="fas fa-user-md"></i>
+                            Select James
+                        </button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="dr-maria-garcia">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/dr-maria-garcia.jpg" alt="Dr. Maria Garcia">
+                            <div class="counselor-overlay">
+                                <div class="counselor-specialty">Medical & Health Psychology</div>
+                            </div>
+                        </div>
+                        <div class="counselor-info">
+                            <h3>Dr. Maria Garcia</h3>
+                            <p class="counselor-description">Health psychologist with expertise in chronic illness, pain management, and medical trauma.</p>
+                            <div class="counselor-traits">
+                                <span class="trait">Professional</span>
+                                <span class="trait">Medical</span>
+                                <span class="trait">Compassionate</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary select-counselor">
+                            <i class="fas fa-user-md"></i>
+                            Select Dr. Garcia
+                        </button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="lisa-thompson">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/lisa-thompson.jpg" alt="Lisa Thompson">
+                            <div class="counselor-overlay">
+                                <div class="counselor-specialty">General Counseling & Support</div>
+                            </div>
+                        </div>
+                        <div class="counselor-info">
+                            <h3>Lisa Thompson</h3>
+                            <p class="counselor-description">Licensed professional counselor offering compassionate support for life challenges and personal growth.</p>
+                            <div class="counselor-traits">
+                                <span class="trait">Friendly</span>
+                                <span class="trait">Approachable</span>
+                                <span class="trait">Supportive</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary select-counselor">
+                            <i class="fas fa-user-md"></i>
+                            Select Lisa
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HeyGen Avatar Demo Area -->
+            <section class="heygen-demo" id="heygen-demo" style="display: none;">
+                <div class="heygen-avatar-container">
+                    <!-- Avatar Display -->
+                    <div id="heygen-avatar-container"></div>
+                    
+                    <!-- Chat Interface -->
+                    <div class="chat-interface">
+                        <div class="chat-header">
+                            <h3 id="selected-counselor-name">Counselor Name</h3>
+                            <p id="selected-counselor-specialty">Specialty</p>
+                            <div class="chat-status">
+                                <span class="status-indicator" id="avatar-status">Ready</span>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-messages" id="chat-messages">
+                            <!-- Messages will be added here dynamically -->
+                        </div>
+                        
+                        <div class="chat-input">
+                            <textarea id="message-input" placeholder="Type your message here... Share what's on your mind, and I'll respond with understanding and support." rows="3"></textarea>
+                            <button id="send-message" class="btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo Controls -->
+                <div class="demo-controls">
+                    <h3>Interactive Demo Controls</h3>
+                    <p>Test different expressions, emotions, and voice features to experience the full range of our HeyGen avatar capabilities.</p>
+                    
+                    <div class="control-sections">
+                        <div class="control-section">
+                            <h4><i class="fas fa-smile"></i> Expression Tests</h4>
+                            <div class="control-buttons">
+                                <button class="btn-secondary demo-control" data-action="test-expression" data-value="listening">
+                                    <i class="fas fa-eye"></i>
+                                    Listening
+                                </button>
+                                <button class="btn-secondary demo-control" data-action="test-expression" data-value="concerned">
+                                    <i class="fas fa-frown"></i>
+                                    Concerned
+                                </button>
+                                <button class="btn-secondary demo-control" data-action="test-expression" data-value="encouraging">
+                                    <i class="fas fa-smile"></i>
+                                    Encouraging
+                                </button>
+                                <button class="btn-secondary demo-control" data-action="test-expression" data-value="thoughtful">
+                                    <i class="fas fa-brain"></i>
+                                    Thoughtful
+                                </button>
+                                <button class="btn-secondary demo-control" data-action="test-expression" data-value="empathetic">
+                                    <i class="fas fa-heart"></i>
+                                    Empathetic
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="control-section">
+                            <h4><i class="fas fa-microphone"></i> Voice Tests</h4>
+                            <div class="control-buttons">
+                                <button class="btn-secondary demo-control" data-action="test-voice" data-value="Hello! This is a voice synthesis test demonstrating the natural speech capabilities of our HeyGen avatars.">
+                                    <i class="fas fa-volume-up"></i>
+                                    Test Voice
+                                </button>
+                                <button class="btn-secondary demo-control" data-action="test-voice" data-value="I understand you're going through a difficult time. I'm here to listen and support you through this journey.">
+                                    <i class="fas fa-comments"></i>
+                                    Supportive Message
+                                </button>
+                                <button class="btn-secondary demo-control" data-action="test-voice" data-value="That's a great insight! Let's explore that further together. What do you think led you to that realization?">
+                                    <i class="fas fa-lightbulb"></i>
+                                    Encouraging Response
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="control-section">
+                            <h4><i class="fas fa-brain"></i> Emotion Tests</h4>
+                            <div class="control-buttons">
+                                <button class="btn-secondary demo-control" data-action="test-emotion" data-value="I am feeling very sad and hopeless today. Nothing seems to be going right.">
+                                    <i class="fas fa-sad-tear"></i>
+                                    Sadness
+                                </button>
+                                <button class="btn-secondary demo-control" data-action="test-emotion" data-value="I'm so excited about this new opportunity! I can't wait to get started.">
+                                    <i class="fas fa-grin-stars"></i>
+                                    Excitement
+                                </button>
+                                <button class="btn-secondary demo-control" data-action="test-emotion" data-value="I'm really worried about my relationship. We keep having the same arguments.">
+                                    <i class="fas fa-worried"></i>
+                                    Worry
+                                </button>
+                                <button class="btn-secondary demo-control" data-action="test-emotion" data-value="I feel so grateful for all the support I've received. It's really helped me through this difficult time.">
+                                    <i class="fas fa-gratitude"></i>
+                                    Gratitude
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Showcase -->
+            <section class="features-showcase">
+                <h2>HeyGen Avatar Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Real-time Streaming</h3>
+                        <p>Ultra-realistic talking head avatars with live streaming capabilities for immediate, responsive interactions.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3>Natural Voice Synthesis</h3>
+                        <p>High-quality text-to-speech with natural intonation, emotion, and personality matching each counselor's unique voice.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h3>Emotional Expressions</h3>
+                        <p>Realistic facial expressions that respond to conversation context, emotional analysis, and therapeutic interactions.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Context Awareness</h3>
+                        <p>Advanced AI that understands conversation context and adjusts responses, expressions, and tone accordingly.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Professional Personas</h3>
+                        <p>Each avatar has a unique personality, expertise, and therapeutic approach matching real counseling professionals.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Safety & Ethics</h3>
+                        <p>Built-in safety measures, crisis detection, and professional boundaries to ensure ethical AI counseling.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Information -->
+            <section class="technical-info">
+                <h2>Technical Implementation</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>HeyGen Integration</h3>
+                        <ul>
+                            <li>Real-time streaming API</li>
+                            <li>Custom avatar creation</li>
+                            <li>Voice synthesis integration</li>
+                            <li>Expression and gesture control</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h3>AI & NLP</h3>
+                        <ul>
+                            <li>OpenAI GPT-4 integration</li>
+                            <li>Emotion analysis</li>
+                            <li>Context understanding</li>
+                            <li>Conversation memory</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h3>Voice Synthesis</h3>
+                        <ul>
+                            <li>ElevenLabs integration</li>
+                            <li>Custom voice profiles</li>
+                            <li>Emotional tone control</li>
+                            <li>Natural speech patterns</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h3>Safety & Compliance</h3>
+                        <ul>
+                            <li>Crisis detection</li>
+                            <li>Professional boundaries</li>
+                            <li>Privacy protection</li>
+                            <li>Ethical guidelines</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CareConnect</h3>
+                    <p>Revolutionizing mental health support with AI-powered counseling and lifelike avatars.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/counselors">Counselors</a></li>
+                        <li><a href="/lifelike-demo.html">Lifelike Demo</a></li>
+                        <li><a href="/heygen-demo.html">HeyGen Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@careconnect.ai</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Emergency: 988 (Suicide & Crisis Lifeline)</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareConnect. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/heygenAvatar.js"></script>
+    <script>
+        // Additional demo functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading states to counselor cards
+            document.querySelectorAll('.select-counselor').forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.counselor-card');
+                    card.classList.add('loading');
+                    
+                    // Remove loading state after selection
+                    setTimeout(() => {
+                        card.classList.remove('loading');
+                    }, 2000);
+                });
+            });
+            
+            // Add hover effects to feature cards
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

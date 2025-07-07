@@ -1,0 +1,19 @@
+{
+  "stripe": {
+    "enabled": true,
+    "description": "Credit cards, Apple Pay, Google Pay"
+  },
+  "nmi": {
+    "enabled": true,
+    "gatewayId": "17449",
+    "username": "BrooksM1874",
+    "password": "chgM110171b$",
+    "apiKey": "104.175.148.157",
+    "endpoint": "https://secure.networkmerchants.com/api/transact.php"
+  },
+  "crypto": {
+    "enabled": true,
+    "wallet": "0xB7f814EbE3B4f0e838470E60869d75B977a6E3c2",
+    "description": "Bitcoin, Ethereum, MetaMask integration"
+  }
+}

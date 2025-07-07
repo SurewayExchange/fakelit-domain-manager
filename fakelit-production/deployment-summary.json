@@ -1,0 +1,65 @@
+{
+  "deployment": {
+    "date": "2025-07-07T14:08:47.557Z",
+    "domain": "fakelit.com",
+    "company": {
+      "name": "Fakelit.com",
+      "address": "2300 W Sahara Ave Suite 800, Las Vegas, NV 89102",
+      "phone": "702-664-0009",
+      "email": "sales@fakelit.com",
+      "website": "https://fakelit.com"
+    },
+    "services": {
+      "hosting": {
+        "shared": {
+          "starter": "$9.99/month - 10GB SSD, 1 domain",
+          "business": "$19.99/month - 50GB SSD, 5 domains",
+          "premium": "$39.99/month - 100GB SSD, unlimited domains"
+        },
+        "dedicated": {
+          "basic": "$199.99/month - 4 vCPU, 8GB RAM, 500GB SSD",
+          "professional": "$399.99/month - 8 vCPU, 16GB RAM, 1TB SSD",
+          "enterprise": "$799.99/month - 16 vCPU, 32GB RAM, 2TB SSD"
+        }
+      },
+      "domains": {
+        "registration": "$21.99/year - includes 5 free email addresses",
+        "management": "DNS management, domain privacy, webmail access",
+        "transfer": "$19.99/year - domain transfer service"
+      },
+      "email": {
+        "professional": "7 Fakelit.com email addresses included",
+        "hosting": "Webmail access, spam protection, 10GB storage",
+        "forwarding": "Email forwarding to client addresses"
+      },
+      "paymentGateways": {
+        "stripe": "Credit cards, Apple Pay, Google Pay",
+        "nmi": "Network Merchants Inc. - traditional payment processing",
+        "crypto": "Bitcoin, Ethereum, MetaMask integration"
+      },
+      "support": {
+        "phone": "702-664-0009 - 24/7 technical support",
+        "email": "support@fakelit.com - ticket system",
+        "aiChatbot": "AI-powered customer assistance",
+        "documentation": "Comprehensive guides and tutorials"
+      }
+    }
+  },
+  "urls": {
+    "main": "https://fakelit.com",
+    "api": "https://fakelit.com/api",
+    "admin": "https://fakelit.com/admin",
+    "webmail": "https://webmail.fakelit.com",
+    "sitemap": "https://fakelit.com/sitemap.xml"
+  },
+  "features": {
+    "hosting": "Complete hosting platform",
+    "domains": "Domain management system",
+    "email": "Professional email services",
+    "sms": "SMS notifications",
+    "ticketing": "Support ticketing system",
+    "payments": "Multi-gateway payment processing",
+    "aiChatbot": "AI-powered customer support",
+    "autoScaling": "Auto-scaling infrastructure"
+  }
+}

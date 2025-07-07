@@ -1,0 +1,44 @@
+{
+  "animations": {
+    "greeting": {
+      "duration": 2000,
+      "type": "wave",
+      "intensity": "gentle",
+      "trigger": "session_start"
+    },
+    "listening": {
+      "duration": 3000,
+      "type": "nod",
+      "intensity": "subtle",
+      "trigger": "user_speaking"
+    },
+    "thinking": {
+      "duration": 1500,
+      "type": "head_tilt",
+      "intensity": "moderate",
+      "trigger": "processing"
+    },
+    "responding": {
+      "duration": 2500,
+      "type": "gesture",
+      "intensity": "natural",
+      "trigger": "counselor_speaking"
+    },
+    "supportive": {
+      "duration": 2000,
+      "type": "lean_forward",
+      "intensity": "caring",
+      "trigger": "emotional_support"
+    }
+  },
+  "defaultAnimation": "listening",
+  "animationQueue": {
+    "maxConcurrent": 1,
+    "priority": [
+      "crisis",
+      "response",
+      "listening",
+      "idle"
+    ]
+  }
+}

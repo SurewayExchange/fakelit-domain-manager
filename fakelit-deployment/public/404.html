@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-container">
+            <div class="error-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <h1>404 - Page Not Found</h1>
+            <p>Sorry, the page you're looking for doesn't exist. But don't worry - we're here to help you find what you need.</p>
+            
+            <div class="error-actions">
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i>
+                    Go Home
+                </a>
+                <a href="/counselors" class="btn btn-secondary">
+                    <i class="fas fa-users"></i>
+                    Meet Our Counselors
+                </a>
+                <button onclick="openChatModal()" class="btn btn-primary">
+                    <i class="fas fa-comments"></i>
+                    Talk to Someone
+                </button>
+            </div>
+            
+            <div class="error-suggestions">
+                <h3>Looking for something specific?</h3>
+                <ul>
+                    <li><a href="/counselor/dr-sarah-mitchell">Mental Health Support</a></li>
+                    <li><a href="/counselor/michael-rodriguez">Substance Abuse Help</a></li>
+                    <li><a href="/counselor/dr-emily-chen">Relationship Counseling</a></li>
+                    <li><a href="/counselor/james-williams">Career Guidance</a></li>
+                    <li><a href="/counselor/dr-maria-garcia">Crisis Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="emergency-info">
+                <h3>🆘 Need Immediate Help?</h3>
+                <p>If you're experiencing a crisis, please use these emergency resources:</p>
+                <div class="emergency-links">
+                    <a href="tel:988" class="emergency-link">
+                        <i class="fas fa-phone"></i>
+                        National Suicide Prevention Lifeline: 988
+                    </a>
+                    <a href="tel:911" class="emergency-link">
+                        <i class="fas fa-phone"></i>
+                        Emergency Services: 911
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="error-footer">
+            <p>&copy; 2024 CareConnect. All rights reserved. Powered by <a href="https://fakelit.com">Fakelit.com</a></p>
+        </footer>
+    </div>
+
+    <style>
+        .error-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4F46E5 0%, #3730A3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .error-container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .error-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .error-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .error-container p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .error-actions .btn {
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .error-suggestions {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .error-suggestions h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .error-suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .error-suggestions li {
+            margin-bottom: 10px;
+        }
+
+        .error-suggestions a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .error-suggestions a:hover {
+            color: white;
+        }
+
+        .emergency-info {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .emergency-info h3 {
+            color: #FECACA;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .emergency-info p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .emergency-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .emergency-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #EF4444;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .emergency-link:hover {
+            background: #DC2626;
+            transform: translateY(-2px);
+        }
+
+        .error-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .error-footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .error-footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 30px 20px;
+            }
+
+            .error-container h1 {
+                font-size: 2rem;
+            }
+
+            .error-container p {
+                font-size: 1rem;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .error-actions .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <script>
+        function openChatModal() {
+            // Redirect to home page with chat modal
+            window.location.href = '/?action=chat';
+        }
+    </script>
+</body>
+</html> 

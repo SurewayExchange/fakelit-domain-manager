@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-container {
+            min-height: 100vh;
+            background: #f8f9fa;
+        }
+        
+        .admin-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .admin-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .admin-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .admin-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .admin-avatar {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .admin-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .dashboard-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+        
+        .icon-users { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .icon-chat { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .icon-analytics { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .icon-system { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        
+        .card-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .card-change {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .card-change.positive { color: #28a745; }
+        .card-change.negative { color: #dc3545; }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .content-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .admin-table th,
+        .admin-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e1e5e9;
+        }
+        
+        .admin-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .admin-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .status-active { background: #d4edda; color: #155724; }
+        .status-inactive { background: #f8d7da; color: #721c24; }
+        .status-suspended { background: #fff3cd; color: #856404; }
+        
+        .action-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+        
+        .btn-edit { background: #007bff; color: white; }
+        .btn-suspend { background: #ffc107; color: #333; }
+        .btn-delete { background: #dc3545; color: white; }
+        
+        .recent-activity {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e1e5e9;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .activity-content {
+            flex: 1;
+        }
+        
+        .activity-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .activity-time {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .logout-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <nav class="admin-nav">
+                <div class="admin-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    CareConnect Admin
+                </div>
+                <div class="admin-user">
+                    <div class="admin-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span id="adminName">Admin User</span>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </nav>
+        </header>
+        
+        <main class="admin-content">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-title">Total Users</div>
+                        <div class="card-icon icon-users">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="totalUsers">0</div>
+                    <div class="card-change positive" id="userChange">+12% this week</div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-title">Active Sessions</div>
+                        <div class="card-icon icon-chat">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="activeSessions">0</div>
+                    <div class="card-change positive" id="sessionChange">+8% this week</div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-title">System Health</div>
+                        <div class="card-icon icon-system">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="systemHealth">100%</div>
+                    <div class="card-change positive" id="healthChange">All systems operational</div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-title">Response Time</div>
+                        <div class="card-icon icon-analytics">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="responseTime">0ms</div>
+                    <div class="card-change positive" id="responseChange">-15% this week</div>
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <div class="content-card">
+                    <h2 class="content-title">
+                        <i class="fas fa-users"></i>
+                        User Management
+                    </h2>
+                    <div class="table-container">
+                        <table class="admin-table" id="usersTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Last Login</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- Users will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <h2 class="content-title">
+                        <i class="fas fa-clock"></i>
+                        Recent Activity
+                    </h2>
+                    <ul class="recent-activity" id="activityList">
+                        <!-- Activity will be loaded here -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Check authentication
+        function checkAuth() {
+            const token = localStorage.getItem('authToken');
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            
+            if (!token || user.role !== 'admin') {
+                window.location.href = '/login.html';
+                return;
+            }
+            
+            document.getElementById('adminName').textContent = `${user.firstName} ${user.lastName}`;
+        }
+        
+        // Load dashboard data
+        async function loadDashboardData() {
+            try {
+                const token = localStorage.getItem('authToken');
+                
+                // Load analytics
+                const analyticsResponse = await fetch('/api/admin/analytics', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (analyticsResponse.ok) {
+                    const analytics = await analyticsResponse.json();
+                    updateDashboardCards(analytics);
+                }
+                
+                // Load users
+                const usersResponse = await fetch('/api/auth/users', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (usersResponse.ok) {
+                    const users = await usersResponse.json();
+                    updateUsersTable(users.users);
+                }
+                
+                // Load recent activity
+                loadRecentActivity();
+                
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+            }
+        }
+        
+        function updateDashboardCards(analytics) {
+            document.getElementById('totalUsers').textContent = analytics.totalUsers || 0;
+            document.getElementById('activeSessions').textContent = analytics.activeSessions || 0;
+            document.getElementById('systemHealth').textContent = analytics.systemHealth || '100%';
+            document.getElementById('responseTime').textContent = analytics.responseTime || '0ms';
+        }
+        
+        function updateUsersTable(users) {
+            const tbody = document.getElementById('usersTableBody');
+            tbody.innerHTML = '';
+            
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${user.firstName} ${user.lastName}</td>
+                    <td>${user.email}</td>
+                    <td>${user.role}</td>
+                    <td><span class="status-badge status-${user.status}">${user.status}</span></td>
+                    <td>${new Date(user.lastLogin).toLocaleDateString()}</td>
+                    <td>
+                        <button class="action-btn btn-edit" onclick="editUser('${user._id}')">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn btn-suspend" onclick="toggleUserStatus('${user._id}', '${user.status}')">
+                            <i class="fas fa-ban"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+        
+        function loadRecentActivity() {
+            const activityList = document.getElementById('activityList');
+            const activities = [
+                { type: 'user', title: 'New user registered', time: '2 minutes ago', icon: 'fa-user-plus', color: '#28a745' },
+                { type: 'chat', title: 'Crisis alert triggered', time: '5 minutes ago', icon: 'fa-exclamation-triangle', color: '#dc3545' },
+                { type: 'system', title: 'System backup completed', time: '1 hour ago', icon: 'fa-database', color: '#007bff' },
+                { type: 'user', title: 'User session ended', time: '2 hours ago', icon: 'fa-sign-out-alt', color: '#6c757d' }
+            ];
+            
+            activityList.innerHTML = '';
+            activities.forEach(activity => {
+                const li = document.createElement('li');
+                li.className = 'activity-item';
+                li.innerHTML = `
+                    <div class="activity-icon" style="background: ${activity.color}">
+                        <i class="fas ${activity.icon}"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">${activity.title}</div>
+                        <div class="activity-time">${activity.time}</div>
+                    </div>
+                `;
+                activityList.appendChild(li);
+            });
+        }
+        
+        async function editUser(userId) {
+            // Implement user editing functionality
+            console.log('Edit user:', userId);
+        }
+        
+        async function toggleUserStatus(userId, currentStatus) {
+            try {
+                const token = localStorage.getItem('authToken');
+                const newStatus = currentStatus === 'active' ? 'suspended' : 'active';
+                
+                const response = await fetch(`/api/auth/users/${userId}/status`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ status: newStatus })
+                });
+                
+                if (response.ok) {
+                    loadDashboardData(); // Reload data
+                } else {
+                    console.error('Failed to update user status');
+                }
+            } catch (error) {
+                console.error('Error updating user status:', error);
+            }
+        }
+        
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('user');
+            window.location.href = '/login.html';
+        }
+        
+        // Initialize dashboard
+        window.addEventListener('load', () => {
+            checkAuth();
+            loadDashboardData();
+            
+            // Refresh data every 30 seconds
+            setInterval(loadDashboardData, 30000);
+        });
+    </script>
+</body>
+</html> 

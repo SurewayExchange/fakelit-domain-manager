@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - CareConnect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #4F46E5 0%, #3730A3 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .offline-container {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .offline-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .emergency-info {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .emergency-info h3 {
+            color: #FECACA;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .emergency-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .emergency-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #EF4444;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .emergency-link:hover {
+            background: #DC2626;
+            transform: translateY(-2px);
+        }
+
+        .retry-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .retry-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .offline-features {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .offline-features h3 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            opacity: 0.8;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            .offline-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .emergency-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">
+            📶
+        </div>
+        
+        <h1>You're Offline</h1>
+        <p>It looks like you don't have an internet connection right now. Don't worry - we're here to help you get back online and access CareConnect.</p>
+
+        <div class="emergency-info">
+            <h3>🆘 Need Immediate Help?</h3>
+            <p>If you're experiencing a crisis, please use these emergency resources:</p>
+            
+            <div class="emergency-links">
+                <a href="tel:988" class="emergency-link">
+                    <span>📞</span>
+                    National Suicide Prevention Lifeline: 988
+                </a>
+                <a href="tel:911" class="emergency-link">
+                    <span>🚨</span>
+                    Emergency Services: 911
+                </a>
+                <a href="sms:741741&body=HOME" class="emergency-link">
+                    <span>💬</span>
+                    Crisis Text Line: Text HOME to 741741
+                </a>
+            </div>
+        </div>
+
+        <button class="retry-button" onclick="retryConnection()">
+            🔄 Try Again
+        </button>
+
+        <div class="offline-features">
+            <h3>What you can do while offline:</h3>
+            <ul class="feature-list">
+                <li>Access emergency contact information</li>
+                <li>Review previously cached content</li>
+                <li>Prepare your thoughts for when you're back online</li>
+                <li>Practice breathing exercises and mindfulness</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Check connection status
+        function checkConnection() {
+            if (navigator.onLine) {
+                window.location.reload();
+            }
+        }
+
+        // Retry connection
+        function retryConnection() {
+            const button = document.querySelector('.retry-button');
+            button.textContent = '🔄 Checking...';
+            button.disabled = true;
+
+            // Simulate connection check
+            setTimeout(() => {
+                if (navigator.onLine) {
+                    window.location.reload();
+                } else {
+                    button.textContent = '❌ Still Offline';
+                    setTimeout(() => {
+                        button.textContent = '🔄 Try Again';
+                        button.disabled = false;
+                    }, 2000);
+                }
+            }, 2000);
+        }
+
+        // Listen for online/offline events
+        window.addEventListener('online', () => {
+            window.location.reload();
+        });
+
+        window.addEventListener('offline', () => {
+            // Already on offline page
+        });
+
+        // Auto-retry every 30 seconds
+        setInterval(checkConnection, 30000);
+
+        // Track offline event
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.ready.then(registration => {
+                registration.active.postMessage({
+                    type: 'TRACK_OFFLINE',
+                    data: {
+                        timestamp: new Date().toISOString(),
+                        userAgent: navigator.userAgent
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html> 

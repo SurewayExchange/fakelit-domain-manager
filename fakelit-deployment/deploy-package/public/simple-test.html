@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Test - CareConnect</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .btn { padding: 10px 20px; margin: 10px; background: #4F46E5; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .btn:hover { background: #3730A3; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+        .modal.show { display: flex; align-items: center; justify-content: center; }
+        .modal-content { background: white; padding: 20px; border-radius: 10px; max-width: 500px; }
+        .log { background: #f5f5f5; padding: 10px; margin: 10px 0; border-radius: 5px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>Simple Button Test</h1>
+    
+    <div>
+        <button class="btn" onclick="testFunction1()">Test Function 1</button>
+        <button class="btn" onclick="testFunction2()">Test Function 2</button>
+        <button class="btn" onclick="openModal()">Open Modal</button>
+        <button class="btn" onclick="testAlert()">Test Alert</button>
+    </div>
+    
+    <div class="log" id="log">Console log will appear here...</div>
+    
+    <!-- Simple Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3>Test Modal</h3>
+            <p>This is a test modal that should appear when you click the button.</p>
+            <button class="btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    
+    <script>
+        // Simple test functions
+        function testFunction1() {
+            console.log('Test Function 1 called');
+            logMessage('Test Function 1 called');
+        }
+        
+        function testFunction2() {
+            console.log('Test Function 2 called');
+            logMessage('Test Function 2 called');
+        }
+        
+        function openModal() {
+            console.log('Opening modal');
+            logMessage('Opening modal');
+            document.getElementById('modal').classList.add('show');
+        }
+        
+        function closeModal() {
+            console.log('Closing modal');
+            logMessage('Closing modal');
+            document.getElementById('modal').classList.remove('show');
+        }
+        
+        function testAlert() {
+            console.log('Testing alert');
+            logMessage('Testing alert');
+            alert('This is a test alert!');
+        }
+        
+        function logMessage(message) {
+            const log = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            log.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+        }
+        
+        // Test on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded');
+            logMessage('Page loaded - DOM ready');
+        });
+        
+        // Test if functions are available globally
+        window.testFunction1 = testFunction1;
+        window.testFunction2 = testFunction2;
+        window.openModal = openModal;
+        window.closeModal = closeModal;
+        window.testAlert = testAlert;
+        
+        console.log('Script loaded');
+        logMessage('Script loaded');
+    </script>
+</body>
+</html> 

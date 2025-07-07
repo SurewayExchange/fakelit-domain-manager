@@ -1,0 +1,23 @@
+{
+  "domain": "fakelit.com",
+  "smtp": {
+    "host": "smtp.fakelit.com",
+    "port": 587,
+    "secure": false,
+    "auth": {
+      "user": "noreply@fakelit.com",
+      "pass": "secure-password"
+    }
+  },
+  "addresses": [
+    "support@fakelit.com",
+    "sales@fakelit.com",
+    "m.brooks@fakelit.com",
+    "info@fakelit.com",
+    "accounts@fakelit.com",
+    "v.helems@fakelit.com",
+    "billing@fakelit.com"
+  ],
+  "forwarding": "marquibelbrooks@gmail.com",
+  "poweredBy": "Fakelit.com"
+}

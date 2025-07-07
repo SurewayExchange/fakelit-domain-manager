@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Maria Garcia - Crisis Intervention Specialist | CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Meet Dr. Maria Garcia, our Crisis Intervention Specialist providing emergency mental health support at CareConnect.">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                    <span class="logo-text">CareConnect</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/counselors" class="nav-link">Counselors</a>
+                <a href="/#about" class="nav-link">About</a>
+                <a href="/#contact" class="nav-link">Contact</a>
+                <button class="btn-primary" onclick="openChatModal()">
+                    <i class="fas fa-comments"></i> Talk Now
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="emergency-text">
+                    <h3>Emergency Support Available 24/7</h3>
+                    <p>If you're in immediate crisis, please call 988 or text HOME to 741741</p>
+                </div>
+                <div class="emergency-links">
+                    <a href="tel:988" class="btn-emergency">988</a>
+                    <a href="tel:911" class="btn-emergency">911</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Counselor Profile -->
+    <section class="counselor-profile">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face" alt="Dr. Maria Garcia">
+                    <div class="status-badge online">Online Now</div>
+                </div>
+                <div class="profile-info">
+                    <h1>Dr. Maria Garcia</h1>
+                    <p class="counselor-title">Crisis Intervention Specialist</p>
+                    <p class="counselor-specialty">Emergency & Safety</p>
+                    <div class="counselor-tags">
+                        <span class="tag">Crisis</span>
+                        <span class="tag">Emergency</span>
+                        <span class="tag">Safety</span>
+                        <span class="tag">Support</span>
+                        <span class="tag">Intervention</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn-primary btn-large" onclick="startChat('dr-maria-garcia')">
+                            <i class="fas fa-comments"></i> Start Session
+                        </button>
+                        <a href="/counselors" class="btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back to Counselors
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>About Dr. Maria Garcia</h2>
+                    <p>Dr. Maria Garcia is a licensed Crisis Intervention Specialist with over 18 years of experience in emergency mental health support. She specializes in providing immediate assistance during mental health crises and helping individuals develop safety plans.</p>
+                    
+                    <h3>Areas of Expertise</h3>
+                    <ul>
+                        <li>Crisis intervention and de-escalation</li>
+                        <li>Safety planning and risk assessment</li>
+                        <li>Emergency mental health support</li>
+                        <li>Trauma-informed care</li>
+                        <li>Referral to appropriate services</li>
+                        <li>Post-crisis follow-up support</li>
+                    </ul>
+
+                    <h3>Approach</h3>
+                    <p>Dr. Garcia uses evidence-based crisis intervention techniques to provide immediate support and stabilization. She focuses on safety first, then works to connect individuals with appropriate ongoing care and resources.</p>
+                </div>
+
+                <div class="profile-section">
+                    <h2>How I Can Help You</h2>
+                    <div class="help-grid">
+                        <div class="help-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Crisis Support</h3>
+                            <p>Provide immediate emotional support and help you navigate through difficult moments safely.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-map"></i>
+                            <h3>Safety Planning</h3>
+                            <p>Work together to create a personalized safety plan for managing crisis situations.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Resource Connection</h3>
+                            <p>Connect you with appropriate mental health services and community resources.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-heart"></i>
+                            <h3>Ongoing Support</h3>
+                            <p>Provide follow-up support and help you transition to long-term care when ready.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Important Safety Information</h2>
+                    <div class="safety-info">
+                        <div class="safety-card">
+                            <i class="fas fa-phone"></i>
+                            <h3>National Suicide Prevention Lifeline</h3>
+                            <p>Call <strong>988</strong> for immediate support</p>
+                        </div>
+                        <div class="safety-card">
+                            <i class="fas fa-sms"></i>
+                            <h3>Crisis Text Line</h3>
+                            <p>Text <strong>HOME</strong> to <strong>741741</strong></p>
+                        </div>
+                        <div class="safety-card">
+                            <i class="fas fa-ambulance"></i>
+                            <h3>Emergency Services</h3>
+                            <p>Call <strong>911</strong> for immediate emergency assistance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Start Your Session</h2>
+                    <div class="chat-form">
+                        <div class="form-group">
+                            <label for="sessionType">Session Type</label>
+                            <select id="sessionType" class="form-control">
+                                <option value="general">General Crisis Support</option>
+                                <option value="safety">Safety Planning</option>
+                                <option value="resources">Resource Connection</option>
+                                <option value="followup">Follow-up Support</option>
+                                <option value="emergency">Emergency Support</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sessionMessage">Brief Description (Optional)</label>
+                            <textarea id="sessionMessage" class="form-control" placeholder="Tell me about your current situation..." rows="3"></textarea>
+                        </div>
+                        <button class="btn-primary btn-large" onclick="startChat('dr-maria-garcia')">
+                            <i class="fas fa-comments"></i> Begin Session with Dr. Garcia
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                        <span class="logo-text">CareConnect</span>
+                    </div>
+                    <p>Professional AI-powered mental health support available 24/7. Your well-being is our priority.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#services">Services</a></li>
+                        <li><a href="/counselors">Counselors</a></li>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul class="emergency-links">
+                        <li><a href="tel:988">National Suicide Prevention Lifeline: 988</a></li>
+                        <li><a href="tel:741741">Crisis Text Line: Text HOME to 741741</a></li>
+                        <li><a href="tel:911">Emergency Services: 911</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareConnect. All rights reserved. Powered by <a href="https://fakelit.com">Fakelit.com</a></p>
+                <p>2300 W Sahara Ave Suite 800, Las Vegas NV 89102 | Phone: 702-664-0009 | Email: info@quibe.ai</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3>Chat with Dr. Maria Garcia</h3>
+                <button class="modal-close" onclick="closeChatModal()">&times;</button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message counselor">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=50&h=50&fit=crop&crop=face" alt="Dr. Maria Garcia">
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm Dr. Maria Garcia, your Crisis Intervention Specialist. I'm here to provide immediate support and help you stay safe. What's happening right now?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
+                    <button onclick="sendMessage()" class="btn-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .emergency-banner {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .emergency-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .emergency-content i {
+            font-size: 1.5rem;
+            color: #fbbf24;
+        }
+
+        .emergency-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .emergency-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .emergency-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-emergency {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-emergency:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .counselor-profile {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-avatar {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-avatar img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 6px solid var(--white);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+
+        .counselor-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .counselor-specialty {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .counselor-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .profile-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section {
+            margin-bottom: 40px;
+        }
+
+        .profile-section h2 {
+            font-size: 1.8rem;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+
+        .profile-section h3 {
+            font-size: 1.3rem;
+            color: var(--gray-800);
+            margin: 25px 0 15px;
+        }
+
+        .profile-section p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .profile-section ul {
+            color: var(--gray-600);
+            line-height: 1.7;
+            padding-left: 20px;
+        }
+
+        .profile-section li {
+            margin-bottom: 8px;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .help-card {
+            background: var(--gray-50);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+
+        .help-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .help-card h3 {
+            font-size: 1.2rem;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+
+        .help-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .safety-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .safety-card {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .safety-card i {
+            font-size: 2.5rem;
+            color: #dc2626;
+            margin-bottom: 15px;
+        }
+
+        .safety-card h3 {
+            font-size: 1.2rem;
+            color: #991b1b;
+            margin-bottom: 10px;
+        }
+
+        .safety-card p {
+            color: #7f1d1d;
+            font-size: 1rem;
+        }
+
+        .chat-form {
+            background: var(--gray-50);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .emergency-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .profile-avatar img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .help-grid, .safety-info {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/animations.js"></script>
+    <script>
+        function startChat(counselorId) {
+            // Set counselor context
+            localStorage.setItem('selectedCounselor', counselorId);
+            openChatModal();
+        }
+    </script>
+</body>
+</html> 

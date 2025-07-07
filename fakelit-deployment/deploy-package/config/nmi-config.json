@@ -1,0 +1,28 @@
+{
+  "nmi": {
+    "gatewayId": "17449",
+    "username": "BrooksM1874",
+    "password": "chgM110171b$",
+    "apiKey": "104.175.148.157",
+    "endpoint": "https://secure.networkmerchants.com/api/transact.php",
+    "sandbox": false,
+    "brandName": "Fakelit.com"
+  },
+  "magento": {
+    "baseUrl": "https://your-magento-store.com",
+    "consumerKey": "your_magento_consumer_key",
+    "consumerSecret": "your_magento_consumer_secret",
+    "accessToken": "your_magento_access_token",
+    "accessTokenSecret": "your_magento_access_token_secret"
+  },
+  "payment": {
+    "gateway": "NMI + Magento",
+    "currency": "USD",
+    "supportedMethods": ["credit_card", "ach", "echeck"],
+    "branding": {
+      "name": "Fakelit.com",
+      "poweredBy": "Fakelit.com",
+      "logo": "/images/logo.svg"
+    }
+  }
+} 

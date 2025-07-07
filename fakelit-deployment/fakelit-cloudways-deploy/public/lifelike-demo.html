@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifelike Avatar Demo - CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="/styles/lifelike-avatar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                <span class="logo-text">CareConnect</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/counselors" class="nav-link">Counselors</a>
+                <a href="/lifelike-demo.html" class="nav-link active">Lifelike Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header -->
+            <header class="demo-header">
+                <h1>🎭 Lifelike Avatar Demo</h1>
+                <p>Experience the future of AI counseling with our lifelike avatars featuring real-time expressions, voice synthesis, and emotional intelligence.</p>
+            </header>
+
+            <!-- Avatar Selection -->
+            <section class="avatar-selection">
+                <h2>Choose Your Counselor</h2>
+                <div class="counselor-grid">
+                    <div class="counselor-card" data-counselor="dr-sarah-mitchell">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/dr-sarah-mitchell.jpg" alt="Dr. Sarah Mitchell">
+                        </div>
+                        <h3>Dr. Sarah Mitchell</h3>
+                        <p>Mental Health & CBT</p>
+                        <button class="btn-primary select-counselor">Select</button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="michael-rodriguez">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/michael-rodriguez.jpg" alt="Michael Rodriguez">
+                        </div>
+                        <h3>Michael Rodriguez</h3>
+                        <p>Substance Abuse & Recovery</p>
+                        <button class="btn-primary select-counselor">Select</button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="dr-emily-chen">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/dr-emily-chen.jpg" alt="Dr. Emily Chen">
+                        </div>
+                        <h3>Dr. Emily Chen</h3>
+                        <p>Relationships & Family</p>
+                        <button class="btn-primary select-counselor">Select</button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="james-williams">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/james-williams.jpg" alt="James Williams">
+                        </div>
+                        <h3>James Williams</h3>
+                        <p>Career & Life Coaching</p>
+                        <button class="btn-primary select-counselor">Select</button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="dr-maria-garcia">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/dr-maria-garcia.jpg" alt="Dr. Maria Garcia">
+                        </div>
+                        <h3>Dr. Maria Garcia</h3>
+                        <p>Medical & Health Psychology</p>
+                        <button class="btn-primary select-counselor">Select</button>
+                    </div>
+                    
+                    <div class="counselor-card" data-counselor="lisa-thompson">
+                        <div class="counselor-avatar">
+                            <img src="/images/counselors/lisa-thompson.jpg" alt="Lisa Thompson">
+                        </div>
+                        <h3>Lisa Thompson</h3>
+                        <p>General Counseling & Support</p>
+                        <button class="btn-primary select-counselor">Select</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Avatar Demo Area -->
+            <section class="avatar-demo" id="avatar-demo" style="display: none;">
+                <div class="demo-container">
+                    <!-- Avatar Display -->
+                    <div class="avatar-display">
+                        <div id="lifelike-avatar-container"></div>
+                        <div class="avatar-info">
+                            <h3 id="selected-counselor-name">Counselor Name</h3>
+                            <p id="selected-counselor-specialty">Specialty</p>
+                            <div class="avatar-status">
+                                <span class="status-indicator" id="avatar-status">Ready</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Interface -->
+                    <div class="chat-interface">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="message counselor-message">
+                                <div class="message-content">
+                                    <p>Hello! I'm here to demonstrate our lifelike avatar system. You can type any message and I'll respond with realistic expressions and voice synthesis. Try saying something emotional or ask me a question!</p>
+                                </div>
+                                <div class="message-timestamp">Just now</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input">
+                            <textarea id="message-input" placeholder="Type your message here..." rows="3"></textarea>
+                            <button id="send-message" class="btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo Controls -->
+                <div class="demo-controls">
+                    <h3>Demo Controls</h3>
+                    <div class="control-buttons">
+                        <button class="btn-secondary" onclick="testExpression('listening')">
+                            <i class="fas fa-eye"></i>
+                            Listening
+                        </button>
+                        <button class="btn-secondary" onclick="testExpression('concerned')">
+                            <i class="fas fa-frown"></i>
+                            Concerned
+                        </button>
+                        <button class="btn-secondary" onclick="testExpression('encouraging')">
+                            <i class="fas fa-smile"></i>
+                            Encouraging
+                        </button>
+                        <button class="btn-secondary" onclick="testExpression('thoughtful')">
+                            <i class="fas fa-brain"></i>
+                            Thoughtful
+                        </button>
+                        <button class="btn-secondary" onclick="testVoice('Hello! This is a voice synthesis test.')">
+                            <i class="fas fa-microphone"></i>
+                            Test Voice
+                        </button>
+                        <button class="btn-secondary" onclick="testEmotion('I am feeling very sad and hopeless today.')">
+                            <i class="fas fa-heart"></i>
+                            Test Emotion
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Showcase -->
+            <section class="features-showcase">
+                <h2>Lifelike Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h3>Real-time Expressions</h3>
+                        <p>Avatars respond with realistic facial expressions based on conversation context and emotional analysis.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3>Voice Synthesis</h3>
+                        <p>High-quality voice synthesis using ElevenLabs technology for natural, human-like speech.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Emotional Intelligence</h3>
+                        <p>Advanced emotion analysis that understands context and responds with appropriate empathy.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Context Awareness</h3>
+                        <p>Avatars understand conversation context and adjust their responses and expressions accordingly.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Natural Timing</h3>
+                        <p>Realistic response delays and natural conversation flow that mimics human interaction.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Personality Profiles</h3>
+                        <p>Each counselor has a unique personality, speaking style, and response patterns.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Details -->
+            <section class="technical-details">
+                <h2>Technical Implementation</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h4>Expression Engine</h4>
+                        <p>Real-time facial expression generation based on emotional context and conversation flow.</p>
+                        <code>generateExpression(context, emotion, intensity)</code>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <h4>Emotion Analyzer</h4>
+                        <p>Text sentiment analysis using keyword detection and emotional context mapping.</p>
+                        <code>analyzeText(message) → {emotions, dominant, intensity, context}</code>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <h4>Voice Synthesis</h4>
+                        <p>ElevenLabs API integration for high-quality, natural-sounding voice generation.</p>
+                        <code>synthesizeVoice(voiceId, text) → audioUrl</code>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <h4>Session Management</h4>
+                        <p>Persistent avatar sessions with conversation history and emotional state tracking.</p>
+                        <code>createLifelikeAvatar(counselorId, sessionId)</code>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CareConnect</h3>
+                    <p>Revolutionizing mental health support with AI-powered lifelike avatars.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: support@careconnect.ai</p>
+                    <p>Phone: 1-800-CARE-AI</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Emergency</h4>
+                    <p>National Suicide Prevention: 988</p>
+                    <p>Crisis Text Line: Text HOME to 741741</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/lifelikeAvatar.js"></script>
+    <script>
+        let currentAvatar = null;
+        let selectedCounselor = null;
+
+        // Initialize demo
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Counselor selection
+            document.querySelectorAll('.select-counselor').forEach(button => {
+                button.addEventListener('click', function() {
+                    const counselorCard = this.closest('.counselor-card');
+                    const counselorId = counselorCard.dataset.counselor;
+                    selectCounselor(counselorId);
+                });
+            });
+
+            // Message sending
+            document.getElementById('send-message').addEventListener('click', sendMessage);
+            document.getElementById('message-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        }
+
+        async function selectCounselor(counselorId) {
+            try {
+                // Update UI
+                document.querySelectorAll('.counselor-card').forEach(card => {
+                    card.classList.remove('selected');
+                });
+                document.querySelector(`[data-counselor="${counselorId}"]`).classList.add('selected');
+                
+                // Show demo area
+                document.getElementById('avatar-demo').style.display = 'block';
+                
+                // Get counselor info
+                const response = await fetch(`/api/avatar/lifelike/counselor/${counselorId}`);
+                const data = await response.json();
+                
+                selectedCounselor = data.config;
+                
+                // Update counselor info
+                document.getElementById('selected-counselor-name').textContent = selectedCounselor.name;
+                document.getElementById('selected-counselor-specialty').textContent = selectedCounselor.specialty;
+                
+                // Initialize avatar
+                if (currentAvatar) {
+                    currentAvatar.destroy();
+                }
+                
+                currentAvatar = new LifelikeAvatar('lifelike-avatar-container', counselorId);
+                await currentAvatar.init();
+                
+                // Add greeting message
+                addMessage(selectedCounselor.greeting, 'counselor');
+                
+                // Scroll to demo
+                document.getElementById('avatar-demo').scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('Error selecting counselor:', error);
+                alert('Error initializing avatar. Please try again.');
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            
+            if (!message || !currentAvatar) return;
+            
+            // Add user message
+            addMessage(message, 'user');
+            input.value = '';
+            
+            try {
+                // Process message with avatar
+                const response = await currentAvatar.processMessage(message);
+                
+                // Add avatar response
+                addMessage(response.response, 'counselor');
+                
+            } catch (error) {
+                console.error('Error processing message:', error);
+                addMessage('I apologize, but I encountered an error processing your message. Please try again.', 'counselor');
+            }
+        }
+
+        function addMessage(content, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            messageDiv.innerHTML = `
+                <div class="message-content">
+                    <p>${content}</p>
+                </div>
+                <div class="message-timestamp">${new Date().toLocaleTimeString()}</div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // Demo control functions
+        async function testExpression(expression) {
+            if (!currentAvatar) {
+                alert('Please select a counselor first.');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/avatar/lifelike/expression', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        sessionId: currentAvatar.sessionId,
+                        expression: expression
+                    })
+                });
+                
+                const data = await response.json();
+                console.log('Expression applied:', data);
+                
+            } catch (error) {
+                console.error('Error testing expression:', error);
+            }
+        }
+
+        async function testVoice(text) {
+            if (!currentAvatar) {
+                alert('Please select a counselor first.');
+                return;
+            }
+            
+            try {
+                await currentAvatar.speak(text, 'demo');
+            } catch (error) {
+                console.error('Error testing voice:', error);
+            }
+        }
+
+        async function testEmotion(text) {
+            if (!currentAvatar) {
+                alert('Please select a counselor first.');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/avatar/lifelike/analyze-emotion', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text })
+                });
+                
+                const data = await response.json();
+                console.log('Emotion analysis:', data.analysis);
+                
+                // Process the emotional text
+                await currentAvatar.processMessage(text);
+                
+            } catch (error) {
+                console.error('Error testing emotion:', error);
+            }
+        }
+    </script>
+</body>
+</html> 

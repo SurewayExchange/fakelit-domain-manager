@@ -1,0 +1,83 @@
+{
+  "nmi": {
+    "gatewayId": "your_nmi_gateway_id",
+    "username": "your_nmi_username",
+    "password": "your_nmi_password",
+    "endpoint": "https://secure.networkmerchants.com/api/transact.php",
+    "sandbox": true
+  },
+  "magento": {
+    "baseUrl": "https://your-magento-store.com",
+    "consumerKey": "your_magento_consumer_key",
+    "consumerSecret": "your_magento_consumer_secret",
+    "accessToken": "your_magento_access_token",
+    "accessTokenSecret": "your_magento_access_token_secret",
+    "apiVersion": "V1"
+  },
+  "services": {
+    "domain-registration": {
+      "name": "Domain Registration",
+      "description": "Professional domain registration service via Tucows/Enom",
+      "price": 1500,
+      "currency": "USD",
+      "magentoProductId": "domain_registration",
+      "features": [
+        "Domain registration for 1 year",
+        "DNS management via Cloudways",
+        "SSL certificate included",
+        "24/7 Fakelit.com support",
+        "Professional branding"
+      ]
+    },
+    "domain-management": {
+      "name": "Domain Management",
+      "description": "Complete domain management solution",
+      "price": 2500,
+      "currency": "USD",
+      "magentoProductId": "domain_management",
+      "features": [
+        "Unlimited domain management",
+        "Automated DNS configuration",
+        "SSL certificate management",
+        "Domain transfer assistance",
+        "Professional support",
+        "Analytics dashboard"
+      ]
+    },
+    "premium-support": {
+      "name": "Premium Support",
+      "description": "Priority support and consultation",
+      "price": 5000,
+      "currency": "USD",
+      "magentoProductId": "premium_support",
+      "features": [
+        "Priority 24/7 support",
+        "Dedicated account manager",
+        "Custom domain strategies",
+        "Migration assistance",
+        "Performance optimization",
+        "Security consultation"
+      ]
+    },
+    "enterprise-package": {
+      "name": "Enterprise Package",
+      "description": "Complete enterprise domain solution",
+      "price": 15000,
+      "currency": "USD",
+      "magentoProductId": "enterprise_package",
+      "features": [
+        "Unlimited domains",
+        "Custom branding",
+        "API access",
+        "White-label solution",
+        "Dedicated support team",
+        "Custom integrations",
+        "Advanced analytics",
+        "Compliance reporting"
+      ]
+    }
+  },
+  "poweredBy": "Fakelit.com",
+  "version": "1.0.0",
+  "lastUpdated": "2025-07-07T04:17:19.490Z"
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect AI Counselors Gallery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7fafd;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #2a4d69;
+      margin-top: 32px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin: 40px auto;
+      max-width: 1200px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(42,77,105,0.08);
+      padding: 24px 20px 20px 20px;
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(42,77,105,0.16);
+    }
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #b6e3f4;
+      margin-bottom: 10px;
+      background: #eaf6fb;
+    }
+    .animated-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-bottom: 8px;
+      background: #f0f8ff;
+      border: 2px solid #e6f3ff;
+    }
+    .name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2a4d69;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    .title {
+      font-size: 1rem;
+      color: #4f6d7a;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    .specialization {
+      font-size: 0.95rem;
+      color: #7a92a3;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .desc {
+      font-size: 0.97rem;
+      color: #3d4d5c;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .languages {
+      font-size: 0.9rem;
+      color: #7a92a3;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .credentials {
+      font-size: 0.85rem;
+      color: #b0bfcf;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>CareConnect AI Counselors</h1>
+  <div class="gallery">
+    <!-- Dr. Sarah Mitchell -->
+    <div class="card">
+      <img class="avatar" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face" alt="Dr. Sarah Mitchell">
+      <img class="animated-avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=DrSarahMitchell&backgroundColor=b6e3f4&mouth=smile&style=circle" alt="Animated Dr. Sarah Mitchell">
+      <div class="name">Dr. Sarah Mitchell</div>
+      <div class="title">Licensed Clinical Psychologist</div>
+      <div class="specialization">Mental Health</div>
+      <div class="desc">Professional headshot of Dr. Sarah Mitchell, a warm and empathetic clinical psychologist with kind eyes and a gentle smile</div>
+      <div class="languages">Languages: English, Spanish</div>
+      <div class="credentials">Ph.D. Clinical Psychology, Licensed Psychologist, CBT Certified</div>
+    </div>
+    <!-- Michael Rodriguez -->
+    <div class="card">
+      <img class="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Michael Rodriguez">
+      <img class="animated-avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=MichaelRodriguez&backgroundColor=ffdfbf&mouth=smile&style=circle" alt="Animated Michael Rodriguez">
+      <div class="name">Michael Rodriguez</div>
+      <div class="title">Substance Abuse Counselor</div>
+      <div class="specialization">Drug & Alcohol</div>
+      <div class="desc">Professional photo of Michael Rodriguez, a supportive substance abuse counselor with a compassionate expression and approachable demeanor</div>
+      <div class="languages">Languages: English, Spanish</div>
+      <div class="credentials">M.S. Addiction Counseling, Certified Addiction Counselor, Motivational Interviewing Certified</div>
+    </div>
+    <!-- Dr. Emily Chen -->
+    <div class="card">
+      <img class="avatar" src="https://images.unsplash.com/photo-1594824475545-9d0c7c4951c5?w=300&h=300&fit=crop&crop=face" alt="Dr. Emily Chen">
+      <img class="animated-avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=DrEmilyChen&backgroundColor=f0f8ff&mouth=smile&style=circle" alt="Animated Dr. Emily Chen">
+      <div class="name">Dr. Emily Chen</div>
+      <div class="title">Marriage and Family Therapist</div>
+      <div class="specialization">Social/Family</div>
+      <div class="desc">Professional headshot of Dr. Emily Chen, a compassionate marriage and family therapist with a warm smile and understanding expression</div>
+      <div class="languages">Languages: English, Mandarin</div>
+      <div class="credentials">Ph.D. Marriage and Family Therapy, Licensed MFT, Systemic Therapy Certified</div>
+    </div>
+    <!-- James Williams -->
+    <div class="card">
+      <img class="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="James Williams">
+      <img class="animated-avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=JamesWilliams&backgroundColor=e6f3ff&mouth=smile&style=circle" alt="Animated James Williams">
+      <div class="name">James Williams</div>
+      <div class="title">Career and Life Coach</div>
+      <div class="specialization">Career/School</div>
+      <div class="desc">Professional photo of James Williams, a practical career and life coach with a confident and encouraging expression</div>
+      <div class="languages">Languages: English</div>
+      <div class="credentials">M.A. Counseling Psychology, Certified Life Coach, Stress Management Specialist</div>
+    </div>
+    <!-- Dr. Maria Garcia -->
+    <div class="card">
+      <img class="avatar" src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop&crop=face" alt="Dr. Maria Garcia">
+      <img class="animated-avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=DrMariaGarcia&backgroundColor=ffe6e6&mouth=smile&style=circle" alt="Animated Dr. Maria Garcia">
+      <div class="name">Dr. Maria Garcia</div>
+      <div class="title">Crisis Intervention Specialist</div>
+      <div class="specialization">Crisis Escalation</div>
+      <div class="desc">Professional headshot of Dr. Maria Garcia, a calm and stabilizing crisis intervention specialist with a reassuring presence</div>
+      <div class="languages">Languages: English, Spanish</div>
+      <div class="credentials">Ph.D. Clinical Psychology, Crisis Intervention Certified, Emergency Mental Health Specialist</div>
+    </div>
+    <!-- Lisa Thompson -->
+    <div class="card">
+      <img class="avatar" src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face" alt="Lisa Thompson">
+      <img class="animated-avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=LisaThompson&backgroundColor=f0fff0&mouth=smile&style=circle" alt="Animated Lisa Thompson">
+      <div class="name">Lisa Thompson</div>
+      <div class="title">Onboarding Specialist</div>
+      <div class="specialization">Onboarding</div>
+      <div class="desc">Professional photo of Lisa Thompson, a welcoming onboarding specialist with a friendly and informative demeanor</div>
+      <div class="languages">Languages: English</div>
+      <div class="credentials">M.S. Mental Health Counseling, User Experience Specialist, Mental Health Educator</div>
+    </div>
+  </div>
+</body>
+</html> 

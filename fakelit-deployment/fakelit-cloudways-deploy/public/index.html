@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakelit.com - Domain Management System with AI Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .main-container {
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            height: 80vh;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chatbot-section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .status {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex: 1;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 1.2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        .powered-by {
+            font-size: 0.8rem;
+            color: #999;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        /* Chatbot Styles */
+        .chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .chatbot-header h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .chatbot-header p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #f8f9fa;
+            max-height: 300px;
+        }
+        
+        .message {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message.bot {
+            justify-content: flex-start;
+        }
+        
+        .message-content {
+            max-width: 80%;
+            padding: 0.6rem 0.8rem;
+            border-radius: 15px;
+            word-wrap: break-word;
+            font-size: 0.85rem;
+        }
+        
+        .message.user .message-content {
+            background: #667eea;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e9ecef;
+            border-bottom-left-radius: 4px;
+        }
+        
+        .message.restricted .message-content {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .message.error .message-content {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .quick-responses {
+            padding: 0.8rem;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .quick-responses h3 {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quick-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        
+        .quick-button {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 15px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.7rem;
+            color: #495057;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quick-button:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .chatbot-input {
+            padding: 0.8rem;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .input-container {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .message-input {
+            flex: 1;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        .message-input:focus {
+            border-color: #667eea;
+        }
+        
+        .send-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            font-size: 0.8rem;
+        }
+        
+        .send-button:hover {
+            background: #5a6fd8;
+        }
+        
+        .send-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .typing-indicator {
+            display: none;
+            padding: 0.6rem 0.8rem;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 15px;
+            border-bottom-left-radius: 4px;
+            color: #666;
+            font-style: italic;
+            font-size: 0.8rem;
+        }
+        
+        .chatbot-powered-by {
+            text-align: center;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 0.7rem;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .chatbot-section {
+                width: 100%;
+                height: 400px;
+            }
+            
+            .content-section {
+                order: 2;
+            }
+            
+            .chatbot-section {
+                order: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-container {
+                gap: 1rem;
+            }
+            
+            .content-section, .chatbot-section {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Main Content Section -->
+        <div class="content-section">
+            <div class="logo">🌐 Fakelit.com</div>
+            <div class="tagline">Professional Domain Management System</div>
+            
+            <div class="status">
+                ✅ Application Status: Online<br>
+                🚀 Deployment: Successful<br>
+                🌐 Domain: fakelit.com<br>
+                🤖 AI Assistant: Available
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🌐 Domain Management</h3>
+                    <p>Unified management for multiple platforms including Cloudways and Enom</p>
+                </div>
+                <div class="feature">
+                    <h3>☁️ Cloudways Integration</h3>
+                    <p>Seamless deployment and hosting with automated SSL configuration</p>
+                </div>
+                <div class="feature">
+                    <h3>🔧 Automated Operations</h3>
+                    <p>Streamlined domain and application management with professional branding</p>
+                </div>
+                <div class="feature">
+                    <h3>🤖 AI Assistant</h3>
+                    <p>24/7 AI chatbot for site-related questions and integration support</p>
+                </div>
+                <div class="feature">
+                    <h3>💳 Payment Processing</h3>
+                    <p>Secure payment processing for domain services with Stripe integration</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Professional Branding</h3>
+                    <p>Consistent "Powered by Fakelit.com" across all applications and services</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="/services.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: bold; display: inline-block; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    🚀 View Our Services
+                </a>
+            </div>
+            
+            <div class="powered-by">
+                Powered by Fakelit.com
+            </div>
+        </div>
+        
+        <!-- AI Chatbot Section -->
+        <div class="chatbot-section">
+            <div class="chatbot-header">
+                <h2>🤖 Fakelit.com AI Assistant</h2>
+                <p>Ask me about domain management, deployment, and integration</p>
+            </div>
+            
+            <div class="chatbot-messages" id="messages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I'm your Fakelit.com AI Assistant. I can help with:
+                        <br><br>
+                        • Domain management questions<br>
+                        • Cloudways integration<br>
+                        • Deployment assistance<br>
+                        • API documentation<br>
+                        • SSL configuration<br>
+                        <br>
+                        What can I help you with today?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-responses">
+                <h3>Quick Questions:</h3>
+                <div class="quick-buttons" id="quickButtons">
+                    <!-- Quick buttons will be loaded here -->
+                </div>
+            </div>
+            
+            <div class="chatbot-input">
+                <div class="input-container">
+                    <input type="text" class="message-input" id="messageInput" placeholder="Ask me about Fakelit.com..." maxlength="300">
+                    <button class="send-button" id="sendButton">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chatbot-powered-by">
+                Powered by Fakelit.com
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class FakelitMainPageChatbot {
+            constructor() {
+                this.messagesContainer = document.getElementById('messages');
+                this.messageInput = document.getElementById('messageInput');
+                this.sendButton = document.getElementById('sendButton');
+                this.quickButtons = document.getElementById('quickButtons');
+                
+                this.sessionId = this.generateSessionId();
+                this.isTyping = false;
+                
+                this.init();
+            }
+
+            init() {
+                this.loadQuickResponses();
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                this.sendButton.addEventListener('click', () => this.sendMessage());
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+            }
+
+            async sendMessage() {
+                const message = this.messageInput.value.trim();
+                if (!message || this.isTyping) return;
+
+                // Add user message
+                this.addMessage(message, 'user');
+                this.messageInput.value = '';
+                this.sendButton.disabled = true;
+
+                // Show typing indicator
+                this.showTypingIndicator();
+
+                try {
+                    const response = await fetch('/api/fakelit-chatbot/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            sessionId: this.sessionId
+                        })
+                    });
+
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.addMessage(data.data.response, 'bot', data.data.type);
+                    } else {
+                        this.addMessage('Sorry, I encountered an error. Please try again.', 'bot', 'error');
+                    }
+                } catch (error) {
+                    console.error('Chatbot error:', error);
+                    this.addMessage('Sorry, I\'m having trouble connecting. Please try again.', 'bot', 'error');
+                }
+
+                this.hideTypingIndicator();
+                this.sendButton.disabled = false;
+                this.messageInput.focus();
+            }
+
+            addMessage(content, sender, type = 'assistance') {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender} ${type}`;
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                contentDiv.textContent = content;
+                
+                messageDiv.appendChild(contentDiv);
+                this.messagesContainer.appendChild(messageDiv);
+                
+                this.scrollToBottom();
+            }
+
+            showTypingIndicator() {
+                this.isTyping = true;
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'message bot';
+                typingDiv.id = 'typing-indicator';
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content typing-indicator';
+                contentDiv.textContent = 'Typing...';
+                
+                typingDiv.appendChild(contentDiv);
+                this.messagesContainer.appendChild(typingDiv);
+                this.scrollToBottom();
+            }
+
+            hideTypingIndicator() {
+                this.isTyping = false;
+                const typingIndicator = document.getElementById('typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+
+            async loadQuickResponses() {
+                try {
+                    const response = await fetch('/api/fakelit-chatbot/quick-responses');
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        data.data.suggestions.forEach(suggestion => {
+                            const button = document.createElement('button');
+                            button.className = 'quick-button';
+                            button.textContent = suggestion;
+                            button.addEventListener('click', () => {
+                                this.messageInput.value = suggestion;
+                                this.sendMessage();
+                            });
+                            this.quickButtons.appendChild(button);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Failed to load quick responses:', error);
+                    // Fallback quick responses
+                    const fallbackResponses = [
+                        'How do I deploy to Cloudways?',
+                        'What are the API endpoints?',
+                        'How do I configure SSL?',
+                        'Tell me about Fakelit.com'
+                    ];
+                    
+                    fallbackResponses.forEach(suggestion => {
+                        const button = document.createElement('button');
+                        button.className = 'quick-button';
+                        button.textContent = suggestion;
+                        button.addEventListener('click', () => {
+                            this.messageInput.value = suggestion;
+                            this.sendMessage();
+                        });
+                        this.quickButtons.appendChild(button);
+                    });
+                }
+            }
+
+            scrollToBottom() {
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+            }
+
+            generateSessionId() {
+                return `fakelit_session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+            }
+        }
+
+        // Initialize chatbot when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new FakelitMainPageChatbot();
+        });
+    </script>
+</body>
+</html>

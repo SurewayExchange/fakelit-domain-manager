@@ -1,0 +1,69 @@
+{
+  "brandName": "Fakelit.com",
+  "maxEmailAddresses": 15,
+  "forwardingEmail": "marquibelbrooks@gmail.com",
+  "companyInfo": {
+    "name": "Fakelit.com",
+    "address": "2300 W Sahara Ave Suite 800, Las Vegas, NV 89102",
+    "phone": "702-664-0009",
+    "website": "https://fakelit.com",
+    "supportEmail": "support@fakelit.com",
+    "salesEmail": "sales@fakelit.com",
+    "accountsEmail": "accounts@fakelit.com",
+    "billingEmail": "billing@fakelit.com"
+  },
+  "emailAddresses": [
+    {
+      "address": "support@fakelit.com",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "status": "active",
+      "createdAt": "2025-07-07T13:58:37.584Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "sales@fakelit.com",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "status": "active",
+      "createdAt": "2025-07-07T13:58:37.584Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "m.brooks@fakelit.com",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "status": "active",
+      "createdAt": "2025-07-07T13:58:37.584Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "info@fakelit.com",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "status": "active",
+      "createdAt": "2025-07-07T13:58:37.584Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "accounts@fakelit.com",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "status": "active",
+      "createdAt": "2025-07-07T13:58:37.584Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "v.helems@fakelit.com",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "status": "active",
+      "createdAt": "2025-07-07T13:58:37.584Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "billing@fakelit.com",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "status": "active",
+      "createdAt": "2025-07-07T13:58:37.584Z",
+      "poweredBy": "Fakelit.com"
+    }
+  ],
+  "createdAt": "2025-07-07T13:58:37.584Z",
+  "updatedAt": "2025-07-07T13:58:37.584Z",
+  "poweredBy": "Fakelit.com"
+}

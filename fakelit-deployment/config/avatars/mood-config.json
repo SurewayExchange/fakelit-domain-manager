@@ -1,0 +1,45 @@
+{
+  "moods": {
+    "neutral": {
+      "expression": "neutral",
+      "bodyLanguage": "relaxed",
+      "eyeContact": "direct",
+      "voiceTone": "calm"
+    },
+    "supportive": {
+      "expression": "warm_smile",
+      "bodyLanguage": "leaning_forward",
+      "eyeContact": "caring",
+      "voiceTone": "encouraging"
+    },
+    "empathetic": {
+      "expression": "concerned",
+      "bodyLanguage": "open_posture",
+      "eyeContact": "understanding",
+      "voiceTone": "compassionate"
+    },
+    "professional": {
+      "expression": "focused",
+      "bodyLanguage": "upright",
+      "eyeContact": "attentive",
+      "voiceTone": "clear"
+    },
+    "calm": {
+      "expression": "serene",
+      "bodyLanguage": "grounded",
+      "eyeContact": "steady",
+      "voiceTone": "soothing"
+    },
+    "encouraging": {
+      "expression": "positive",
+      "bodyLanguage": "energetic",
+      "eyeContact": "motivating",
+      "voiceTone": "uplifting"
+    }
+  },
+  "defaultMood": "neutral",
+  "moodTransitions": {
+    "duration": 1000,
+    "easing": "ease-in-out"
+  }
+}

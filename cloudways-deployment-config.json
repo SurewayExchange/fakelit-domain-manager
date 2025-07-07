@@ -1,0 +1,14 @@
+{
+  "cloudwaysDomain": "magento-1486773-5661231.cloudwaysapps.com",
+  "customDomains": [
+    "fakelit.com",
+    "www.fakelit.com"
+  ],
+  "gitRepository": "https://github.com/YOUR_USERNAME/fakelit-domain-manager.git",
+  "branch": "main",
+  "deployPath": "/",
+  "sslEnabled": true,
+  "httpsRedirect": true,
+  "deploymentDate": "2025-07-07T15:41:26.255Z",
+  "status": "ready-for-deployment"
+}

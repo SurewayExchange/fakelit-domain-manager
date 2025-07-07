@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Counselors - CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Meet our professional AI counselors at CareConnect. Each counselor specializes in different areas of mental health support.">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                    <span class="logo-text">CareConnect</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/counselors" class="nav-link active">Counselors</a>
+                <a href="/#about" class="nav-link">About</a>
+                <a href="/#contact" class="nav-link">Contact</a>
+                <button class="btn-primary" onclick="openChatModal()">
+                    <i class="fas fa-comments"></i> Talk Now
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Meet Our AI Counselors</h1>
+                <p>Professional, compassionate, and available 24/7. Each counselor specializes in different areas of mental health support to provide you with the most appropriate care.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counselors Grid -->
+    <section class="counselors-gallery">
+        <div class="container">
+            <div class="counselors-grid">
+                <div class="counselor-card" onclick="window.location.href='/counselor/dr-sarah-mitchell'">
+                    <div class="counselor-avatar">
+                        <img src="/images/counselors/dr-sarah-mitchell.svg" alt="Dr. Sarah Mitchell">
+                        <div class="status-badge online">Online</div>
+                    </div>
+                    <div class="counselor-info">
+                        <h3>Dr. Sarah Mitchell</h3>
+                        <p class="counselor-title">Licensed Clinical Psychologist</p>
+                        <p class="counselor-specialty">Mental Health & CBT</p>
+                        <div class="counselor-tags">
+                            <span class="tag">Anxiety</span>
+                            <span class="tag">Depression</span>
+                            <span class="tag">CBT</span>
+                        </div>
+                        <p class="counselor-description">
+                            Specializes in cognitive behavioral therapy for anxiety, depression, and stress management. 
+                            Provides evidence-based techniques and compassionate support.
+                        </p>
+                    </div>
+                    <button class="btn-counselor">View Profile</button>
+                </div>
+
+                <div class="counselor-card" onclick="window.location.href='/counselor/michael-rodriguez'">
+                    <div class="counselor-avatar">
+                        <img src="/images/counselors/michael-rodriguez.svg" alt="Michael Rodriguez">
+                        <div class="status-badge online">Online</div>
+                    </div>
+                    <div class="counselor-info">
+                        <h3>Michael Rodriguez</h3>
+                        <p class="counselor-title">Substance Abuse Counselor</p>
+                        <p class="counselor-specialty">Recovery & Harm Reduction</p>
+                        <div class="counselor-tags">
+                            <span class="tag">Recovery</span>
+                            <span class="tag">Relapse Prevention</span>
+                            <span class="tag">Support</span>
+                        </div>
+                        <p class="counselor-description">
+                            Dedicated to supporting individuals in recovery from substance abuse. 
+                            Provides harm reduction strategies and relapse prevention techniques.
+                        </p>
+                    </div>
+                    <button class="btn-counselor">View Profile</button>
+                </div>
+
+                <div class="counselor-card" onclick="window.location.href='/counselor/dr-emily-chen'">
+                    <div class="counselor-avatar">
+                        <img src="/images/counselors/dr-emily-chen.svg" alt="Dr. Emily Chen">
+                        <div class="status-badge online">Online</div>
+                    </div>
+                    <div class="counselor-info">
+                        <h3>Dr. Emily Chen</h3>
+                        <p class="counselor-title">Marriage & Family Therapist</p>
+                        <p class="counselor-specialty">Relationships & Communication</p>
+                        <div class="counselor-tags">
+                            <span class="tag">Relationships</span>
+                            <span class="tag">Family</span>
+                            <span class="tag">Communication</span>
+                        </div>
+                        <p class="counselor-description">
+                            Expert in relationship counseling and family therapy. 
+                            Helps couples and families improve communication and resolve conflicts.
+                        </p>
+                    </div>
+                    <button class="btn-counselor">View Profile</button>
+                </div>
+
+                <div class="counselor-card" onclick="window.location.href='/counselor/james-williams'">
+                    <div class="counselor-avatar">
+                        <img src="/images/counselors/james-williams.svg" alt="James Williams">
+                        <div class="status-badge online">Online</div>
+                    </div>
+                    <div class="counselor-info">
+                        <h3>James Williams</h3>
+                        <p class="counselor-title">Career & Life Coach</p>
+                        <p class="counselor-specialty">Work Stress & Balance</p>
+                        <div class="counselor-tags">
+                            <span class="tag">Career</span>
+                            <span class="tag">Stress</span>
+                            <span class="tag">Balance</span>
+                        </div>
+                        <p class="counselor-description">
+                            Specializes in career guidance and work-life balance. 
+                            Helps professionals manage stress and achieve their goals.
+                        </p>
+                    </div>
+                    <button class="btn-counselor">View Profile</button>
+                </div>
+
+                <div class="counselor-card" onclick="window.location.href='/counselor/dr-maria-garcia'">
+                    <div class="counselor-avatar">
+                        <img src="/images/counselors/dr-maria-garcia.svg" alt="Dr. Maria Garcia">
+                        <div class="status-badge online">Online</div>
+                    </div>
+                    <div class="counselor-info">
+                        <h3>Dr. Maria Garcia</h3>
+                        <p class="counselor-title">Crisis Intervention Specialist</p>
+                        <p class="counselor-specialty">Emergency & Safety</p>
+                        <div class="counselor-tags">
+                            <span class="tag">Crisis</span>
+                            <span class="tag">Emergency</span>
+                            <span class="tag">Safety</span>
+                        </div>
+                        <p class="counselor-description">
+                            Expert in crisis intervention and emergency mental health support. 
+                            Provides immediate assistance and safety planning.
+                        </p>
+                    </div>
+                    <button class="btn-counselor">View Profile</button>
+                </div>
+
+                <div class="counselor-card" onclick="window.location.href='/counselor/lisa-thompson'">
+                    <div class="counselor-avatar">
+                        <img src="/images/counselors/lisa-thompson.svg" alt="Lisa Thompson">
+                        <div class="status-badge online">Online</div>
+                    </div>
+                    <div class="counselor-info">
+                        <h3>Lisa Thompson</h3>
+                        <p class="counselor-title">Onboarding Specialist</p>
+                        <p class="counselor-specialty">Welcome & Guidance</p>
+                        <div class="counselor-tags">
+                            <span class="tag">Welcome</span>
+                            <span class="tag">Guidance</span>
+                            <span class="tag">Support</span>
+                        </div>
+                        <p class="counselor-description">
+                            Welcomes new users to CareConnect and guides them through the platform. 
+                            Helps users find the right counselor and services.
+                        </p>
+                    </div>
+                    <button class="btn-counselor">View Profile</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Choose a counselor that fits your needs or start with a general conversation. We're here to help 24/7.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary btn-large" onclick="openChatModal()">
+                        <i class="fas fa-comments"></i> Start Talking Now
+                    </button>
+                    <a href="/" class="btn-secondary btn-large">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                        <span class="logo-text">CareConnect</span>
+                    </div>
+                    <p>Professional AI-powered mental health support available 24/7. Your well-being is our priority.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#services">Services</a></li>
+                        <li><a href="/counselors">Counselors</a></li>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul class="emergency-links">
+                        <li><a href="tel:988">National Suicide Prevention Lifeline: 988</a></li>
+                        <li><a href="tel:741741">Crisis Text Line: Text HOME to 741741</a></li>
+                        <li><a href="tel:911">Emergency Services: 911</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareConnect. All rights reserved. Powered by <a href="https://fakelit.com">Fakelit.com</a></p>
+                <p>2300 W Sahara Ave Suite 800, Las Vegas NV 89102 | Phone: 702-664-0009 | Email: info@quibe.ai</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3>Chat with CareConnect</h3>
+                <button class="modal-close" onclick="closeChatModal()">&times;</button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message counselor">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face" alt="Counselor">
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm here to help you. How are you feeling today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
+                    <button onclick="sendMessage()" class="btn-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .page-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #4F46E5 0%, #3730A3 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .counselors-gallery {
+            padding: 80px 0;
+            background-color: var(--gray-50);
+        }
+
+        .counselors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .counselor-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--gray-200);
+        }
+
+        .counselor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .counselor-avatar {
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .counselor-avatar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 10px;
+            right: 50%;
+            transform: translateX(50%);
+            background: var(--success-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .counselor-info h3 {
+            font-size: 1.5rem;
+            color: var(--gray-900);
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .counselor-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .counselor-specialty {
+            color: var(--gray-600);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .counselor-tags {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .counselor-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn-counselor {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-counselor:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .counselors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/animations.js"></script>
+</body>
+</html> 

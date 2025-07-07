@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakelit.com AI Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .chatbot-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .chatbot-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .chatbot-header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            word-wrap: break-word;
+        }
+
+        .message.user .message-content {
+            background: #667eea;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e9ecef;
+            border-bottom-left-radius: 4px;
+        }
+
+        .message.restricted .message-content {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .message.error .message-content {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .quick-responses {
+            padding: 15px 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .quick-responses h3 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .quick-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .quick-button {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            color: #495057;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-button:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .chatbot-input {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #dee2e6;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .message-input:focus {
+            border-color: #667eea;
+        }
+
+        .send-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .send-button:hover {
+            background: #5a6fd8;
+        }
+
+        .send-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 12px 16px;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 18px;
+            border-bottom-left-radius: 4px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .powered-by {
+            text-align: center;
+            padding: 10px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 0.8rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .faq-section {
+            padding: 15px 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .faq-item:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .faq-answer {
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .chatbot-container {
+                height: 100vh;
+                border-radius: 0;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h1>🤖 Fakelit.com AI Assistant</h1>
+            <p>I can help with site-related questions and integration support</p>
+        </div>
+
+        <div class="chatbot-messages" id="messages">
+            <div class="message bot">
+                <div class="message-content">
+                    Hello! I'm the Fakelit.com AI Assistant. I can help you with:
+                    <br><br>
+                    • Domain management questions<br>
+                    • Cloudways integration<br>
+                    • Deployment assistance<br>
+                    • API documentation<br>
+                    • SSL configuration<br>
+                    <br>
+                    What can I help you with today?
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-responses">
+            <h3>Quick Questions:</h3>
+            <div class="quick-buttons" id="quickButtons">
+                <!-- Quick buttons will be loaded here -->
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h3>Frequently Asked Questions:</h3>
+            <div id="faqList">
+                <!-- FAQ items will be loaded here -->
+            </div>
+        </div>
+
+        <div class="chatbot-input">
+            <div class="input-container">
+                <input type="text" class="message-input" id="messageInput" placeholder="Ask me about Fakelit.com services..." maxlength="500">
+                <button class="send-button" id="sendButton">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="powered-by">
+            Powered by Fakelit.com
+        </div>
+    </div>
+
+    <script>
+        class FakelitChatbot {
+            constructor() {
+                this.messagesContainer = document.getElementById('messages');
+                this.messageInput = document.getElementById('messageInput');
+                this.sendButton = document.getElementById('sendButton');
+                this.quickButtons = document.getElementById('quickButtons');
+                this.faqList = document.getElementById('faqList');
+                
+                this.sessionId = this.generateSessionId();
+                this.isTyping = false;
+                
+                this.init();
+            }
+
+            init() {
+                this.loadQuickResponses();
+                this.loadFAQ();
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                this.sendButton.addEventListener('click', () => this.sendMessage());
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+            }
+
+            async sendMessage() {
+                const message = this.messageInput.value.trim();
+                if (!message || this.isTyping) return;
+
+                // Add user message
+                this.addMessage(message, 'user');
+                this.messageInput.value = '';
+                this.sendButton.disabled = true;
+
+                // Show typing indicator
+                this.showTypingIndicator();
+
+                try {
+                    const response = await fetch('/api/fakelit-chatbot/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            sessionId: this.sessionId
+                        })
+                    });
+
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.addMessage(data.data.response, 'bot', data.data.type);
+                    } else {
+                        this.addMessage('Sorry, I encountered an error. Please try again.', 'bot', 'error');
+                    }
+                } catch (error) {
+                    console.error('Chatbot error:', error);
+                    this.addMessage('Sorry, I\'m having trouble connecting. Please try again.', 'bot', 'error');
+                }
+
+                this.hideTypingIndicator();
+                this.sendButton.disabled = false;
+                this.messageInput.focus();
+            }
+
+            addMessage(content, sender, type = 'assistance') {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender} ${type}`;
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                contentDiv.textContent = content;
+                
+                messageDiv.appendChild(contentDiv);
+                this.messagesContainer.appendChild(messageDiv);
+                
+                this.scrollToBottom();
+            }
+
+            showTypingIndicator() {
+                this.isTyping = true;
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'message bot';
+                typingDiv.id = 'typing-indicator';
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content typing-indicator';
+                contentDiv.textContent = 'Typing...';
+                
+                typingDiv.appendChild(contentDiv);
+                this.messagesContainer.appendChild(typingDiv);
+                this.scrollToBottom();
+            }
+
+            hideTypingIndicator() {
+                this.isTyping = false;
+                const typingIndicator = document.getElementById('typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+
+            async loadQuickResponses() {
+                try {
+                    const response = await fetch('/api/fakelit-chatbot/quick-responses');
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        data.data.suggestions.forEach(suggestion => {
+                            const button = document.createElement('button');
+                            button.className = 'quick-button';
+                            button.textContent = suggestion;
+                            button.addEventListener('click', () => {
+                                this.messageInput.value = suggestion;
+                                this.sendMessage();
+                            });
+                            this.quickButtons.appendChild(button);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Failed to load quick responses:', error);
+                }
+            }
+
+            async loadFAQ() {
+                try {
+                    const response = await fetch('/api/fakelit-chatbot/faq');
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        Object.entries(data.data.faqs).forEach(([key, faq]) => {
+                            const faqItem = document.createElement('div');
+                            faqItem.className = 'faq-item';
+                            
+                            const question = document.createElement('div');
+                            question.className = 'faq-question';
+                            question.textContent = faq.question;
+                            
+                            const answer = document.createElement('div');
+                            answer.className = 'faq-answer';
+                            answer.textContent = faq.answer;
+                            
+                            faqItem.appendChild(question);
+                            faqItem.appendChild(answer);
+                            
+                            faqItem.addEventListener('click', () => {
+                                faqItem.classList.toggle('active');
+                            });
+                            
+                            this.faqList.appendChild(faqItem);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Failed to load FAQ:', error);
+                }
+            }
+
+            scrollToBottom() {
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+            }
+
+            generateSessionId() {
+                return `fakelit_session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+            }
+        }
+
+        // Initialize chatbot when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new FakelitChatbot();
+        });
+    </script>
+</body>
+</html> 

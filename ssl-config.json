@@ -1,0 +1,11 @@
+{
+  "domain": "fakelit.com",
+  "subdomains": [
+    "www.fakelit.com"
+  ],
+  "certificateType": "lets-encrypt",
+  "autoRenewal": true,
+  "forceHttps": true,
+  "setupDate": "2025-07-07T15:28:07.191Z",
+  "status": "pending-setup"
+}

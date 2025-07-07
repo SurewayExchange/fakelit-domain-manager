@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://careconnect.ai/sitemap.xml
+
+# Disallow admin and API endpoints
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /sw.js
+Disallow: /manifest.json
+
+# Allow important pages
+Allow: /counselors
+Allow: /counselor/
+Allow: /safety-policy
+Allow: /privacy
+Allow: /terms
+
+# Crawl delay (optional)
+Crawl-delay: 1 

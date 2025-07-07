@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sarah Mitchell - Licensed Clinical Psychologist | CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Meet Dr. Sarah Mitchell, our Licensed Clinical Psychologist specializing in CBT for anxiety and depression at CareConnect.">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                    <span class="logo-text">CareConnect</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/counselors" class="nav-link">Counselors</a>
+                <a href="/#about" class="nav-link">About</a>
+                <a href="/#contact" class="nav-link">Contact</a>
+                <button class="btn-primary" onclick="openChatModal()">
+                    <i class="fas fa-comments"></i> Talk Now
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Counselor Profile -->
+    <section class="counselor-profile">
+        <div class="profile-hero">
+            <div class="profile-hero-bg">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=400&fit=crop" alt="Mental Health Support">
+                <div class="profile-hero-overlay"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face" alt="Dr. Sarah Mitchell">
+                    <div class="status-badge online">Online Now</div>
+                </div>
+                <div class="profile-info">
+                    <h1>Dr. Sarah Mitchell</h1>
+                    <p class="counselor-title">Licensed Clinical Psychologist</p>
+                    <p class="counselor-specialty">Mental Health & CBT</p>
+                    <div class="counselor-tags">
+                        <span class="tag">Anxiety</span>
+                        <span class="tag">Depression</span>
+                        <span class="tag">CBT</span>
+                        <span class="tag">Stress</span>
+                        <span class="tag">Therapy</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn-primary btn-large" onclick="startChat('dr-sarah-mitchell')">
+                            <i class="fas fa-comments"></i> Start Session
+                        </button>
+                        <a href="/counselors" class="btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back to Counselors
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>About Dr. Sarah Mitchell</h2>
+                    <p>Dr. Sarah Mitchell is a licensed Clinical Psychologist with over 20 years of experience in cognitive behavioral therapy (CBT). She specializes in treating anxiety, depression, and stress-related disorders using evidence-based therapeutic approaches.</p>
+                    
+                    <h3>Areas of Expertise</h3>
+                    <ul>
+                        <li>Anxiety disorders and panic attacks</li>
+                        <li>Depression and mood disorders</li>
+                        <li>Stress management and burnout</li>
+                        <li>Cognitive Behavioral Therapy (CBT)</li>
+                        <li>Mindfulness and relaxation techniques</li>
+                        <li>Trauma-informed care</li>
+                    </ul>
+
+                    <h3>Approach</h3>
+                    <p>Dr. Mitchell uses a compassionate, evidence-based approach combining CBT techniques with mindfulness practices. She helps clients identify and change negative thought patterns while developing healthy coping strategies for long-term mental wellness.</p>
+                </div>
+
+                <div class="profile-section">
+                    <h2>How I Can Help You</h2>
+                    <div class="help-grid">
+                        <div class="help-card">
+                            <i class="fas fa-brain"></i>
+                            <h3>Cognitive Therapy</h3>
+                            <p>Identify and challenge negative thought patterns that contribute to anxiety and depression.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-heart"></i>
+                            <h3>Emotional Support</h3>
+                            <p>Provide compassionate support while helping you develop healthy emotional regulation skills.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-tools"></i>
+                            <h3>Coping Strategies</h3>
+                            <p>Learn practical techniques to manage stress, anxiety, and difficult emotions effectively.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-seedling"></i>
+                            <h3>Personal Growth</h3>
+                            <p>Work towards building resilience and developing a more positive outlook on life.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Start Your Session</h2>
+                    <div class="chat-form">
+                        <div class="form-group">
+                            <label for="sessionType">Session Type</label>
+                            <select id="sessionType" class="form-control">
+                                <option value="general">General Mental Health Support</option>
+                                <option value="anxiety">Anxiety Management</option>
+                                <option value="depression">Depression Support</option>
+                                <option value="stress">Stress Management</option>
+                                <option value="cbt">CBT Techniques</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sessionMessage">Brief Description (Optional)</label>
+                            <textarea id="sessionMessage" class="form-control" placeholder="Tell me about your current situation and what you'd like to work on..." rows="3"></textarea>
+                        </div>
+                        <button class="btn-primary btn-large" onclick="startChat('dr-sarah-mitchell')">
+                            <i class="fas fa-comments"></i> Begin Session with Dr. Mitchell
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                        <span class="logo-text">CareConnect</span>
+                    </div>
+                    <p>Professional AI-powered mental health support available 24/7. Your well-being is our priority.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#services">Services</a></li>
+                        <li><a href="/counselors">Counselors</a></li>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul class="emergency-links">
+                        <li><a href="tel:988">National Suicide Prevention Lifeline: 988</a></li>
+                        <li><a href="tel:741741">Crisis Text Line: Text HOME to 741741</a></li>
+                        <li><a href="tel:911">Emergency Services: 911</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareConnect. All rights reserved. Powered by <a href="https://fakelit.com">Fakelit.com</a></p>
+                <p>2300 W Sahara Ave Suite 800, Las Vegas NV 89102 | Phone: 702-664-0009 | Email: info@quibe.ai</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3>Chat with Dr. Sarah Mitchell</h3>
+                <button class="modal-close" onclick="closeChatModal()">&times;</button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message counselor">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face" alt="Dr. Sarah Mitchell">
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm Dr. Sarah Mitchell, your Licensed Clinical Psychologist. I specialize in cognitive behavioral therapy for anxiety, depression, and stress management. How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
+                    <button onclick="sendMessage()" class="btn-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .counselor-profile {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .profile-hero {
+            position: relative;
+            height: 400px; /* Adjust as needed */
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .profile-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6); /* Darken the image */
+        }
+
+        .profile-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-avatar {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-avatar img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 6px solid var(--white);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+
+        .counselor-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .counselor-specialty {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .counselor-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .profile-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section {
+            margin-bottom: 40px;
+        }
+
+        .profile-section h2 {
+            font-size: 1.8rem;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+
+        .profile-section h3 {
+            font-size: 1.3rem;
+            color: var(--gray-800);
+            margin: 25px 0 15px;
+        }
+
+        .profile-section p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .profile-section ul {
+            color: var(--gray-600);
+            line-height: 1.7;
+            padding-left: 20px;
+        }
+
+        .profile-section li {
+            margin-bottom: 8px;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .help-card {
+            background: var(--gray-50);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+
+        .help-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .help-card h3 {
+            font-size: 1.2rem;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+
+        .help-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .chat-form {
+            background: var(--gray-50);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .profile-avatar img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/animations.js"></script>
+    <script>
+        // Ensure functions are available
+        function startChat(counselorId) {
+            console.log('startChat called with:', counselorId);
+            // Set counselor context
+            localStorage.setItem('selectedCounselor', counselorId);
+            
+            // Check if openChatModal is available
+            if (typeof openChatModal === 'function') {
+                console.log('openChatModal function found, calling it...');
+                openChatModal();
+            } else {
+                console.error('openChatModal function not found');
+                // Fallback: directly show modal
+                const chatModal = document.getElementById('chatModal');
+                if (chatModal) {
+                    chatModal.style.display = 'flex';
+                    chatModal.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        }
+        
+        // Add click event listeners to buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, setting up button listeners');
+            
+            // Find the start session button
+            const startButton = document.querySelector('button[onclick*="startChat"]');
+            if (startButton) {
+                console.log('Found start session button:', startButton.textContent.trim());
+                
+                // Add additional click listener
+                startButton.addEventListener('click', function(e) {
+                    console.log('Start session button clicked');
+                    startChat('dr-sarah-mitchell');
+                });
+            }
+            
+            // Check if chat modal exists
+            const chatModal = document.getElementById('chatModal');
+            console.log('Chat modal found:', !!chatModal);
+        });
+    </script>
+</body>
+</html> 

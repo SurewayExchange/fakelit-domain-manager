@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "supportEmail": "support@fakelit.com",
+  "phone": "702-664-0009",
+  "autoEscalation": true,
+  "notificationTypes": [
+    "new_ticket",
+    "status_update",
+    "resolution",
+    "escalation"
+  ]
+}

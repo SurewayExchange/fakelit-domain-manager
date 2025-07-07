@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakelit.com - Domain Management Services</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            border-color: #007bff;
+        }
+        
+        .service-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-price .currency {
+            font-size: 1.5rem;
+            vertical-align: top;
+        }
+        
+        .service-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .purchase-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .purchase-btn:hover {
+            background: linear-gradient(135deg, #0056b3, #004085);
+            transform: translateY(-2px);
+        }
+        
+        .purchase-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .payment-modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .payment-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .payment-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .payment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .form-group input {
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+        }
+        
+        .payment-summary {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .payment-summary h3 {
+            margin: 0 0 0.5rem 0;
+            color: #333;
+        }
+        
+        .payment-summary p {
+            margin: 0.25rem 0;
+            color: #666;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007bff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .error-message {
+            display: none;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .powered-by {
+            text-align: center;
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .powered-by strong {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="services-container">
+        <header>
+            <h1>🌐 Fakelit.com Domain Management Services</h1>
+            <p>Professional domain management solutions powered by Tucows/Enom and Cloudways</p>
+        </header>
+        
+        <div class="services-grid" id="servicesGrid">
+            <!-- Services will be loaded here -->
+        </div>
+        
+        <div class="powered-by">
+            <strong>Powered by: Fakelit.com</strong> - Your trusted domain management partner
+        </div>
+    </div>
+    
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-content">
+            <button class="close-btn" onclick="closePaymentModal()">&times;</button>
+            
+            <div class="payment-header">
+                <h2>Complete Your Purchase</h2>
+                <p>Secure payment via NMI + Magento</p>
+            </div>
+            
+            <div class="payment-summary" id="paymentSummary">
+                <!-- Payment summary will be populated -->
+            </div>
+            
+            <div class="success-message" id="successMessage">
+                <h3>✅ Payment Successful!</h3>
+                <p>Your service has been activated. You will receive a confirmation email shortly.</p>
+            </div>
+            
+            <div class="error-message" id="errorMessage">
+                <h3>❌ Payment Failed</h3>
+                <p id="errorText">An error occurred during payment processing.</p>
+            </div>
+            
+            <form class="payment-form" id="paymentForm">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cardNumber">Card Number *</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date *</label>
+                        <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cvv">CVV *</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Billing Address</label>
+                    <input type="text" id="address">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" id="state">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="zipCode">ZIP Code</label>
+                        <input type="text" id="zipCode">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" value="US">
+                    </div>
+                </div>
+                
+                <button type="submit" class="purchase-btn" id="submitBtn">
+                    Process Payment
+                </button>
+            </form>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Processing your payment...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentService = null;
+        
+        // Load services on page load
+        document.addEventListener('DOMContentLoaded', loadServices);
+        
+        async function loadServices() {
+            try {
+                const response = await fetch('/api/payments/services');
+                const result = await response.json();
+                
+                if (result.success) {
+                    displayServices(result.data.services);
+                } else {
+                    console.error('Failed to load services:', result.error);
+                }
+            } catch (error) {
+                console.error('Error loading services:', error);
+            }
+        }
+        
+        function displayServices(services) {
+            const grid = document.getElementById('servicesGrid');
+            grid.innerHTML = '';
+            
+            Object.entries(services).forEach(([serviceId, service]) => {
+                const card = createServiceCard(serviceId, service);
+                grid.appendChild(card);
+            });
+        }
+        
+        function createServiceCard(serviceId, service) {
+            const card = document.createElement('div');
+            card.className = 'service-card';
+            
+            const price = (service.price / 100).toFixed(2);
+            
+            card.innerHTML = `
+                <div class="service-header">
+                    <div class="service-name">${service.name}</div>
+                    <div class="service-price">
+                        <span class="currency">$</span>${price}
+                    </div>
+                </div>
+                
+                <p class="service-description">${service.description}</p>
+                
+                <ul class="service-features">
+                    ${service.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+                
+                <button class="purchase-btn" onclick="openPaymentModal('${serviceId}')">
+                    Purchase Now
+                </button>
+            `;
+            
+            return card;
+        }
+        
+        function openPaymentModal(serviceId) {
+            currentService = serviceId;
+            
+            // Load service details
+            loadServiceDetails(serviceId);
+            
+            // Show modal
+            document.getElementById('paymentModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closePaymentModal() {
+            document.getElementById('paymentModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+            
+            // Reset form
+            document.getElementById('paymentForm').reset();
+            hideMessages();
+        }
+        
+        async function loadServiceDetails(serviceId) {
+            try {
+                const response = await fetch(`/api/payments/services/${serviceId}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    const service = result.data.service;
+                    const price = (service.price / 100).toFixed(2);
+                    
+                    document.getElementById('paymentSummary').innerHTML = `
+                        <h3>${service.name}</h3>
+                        <p><strong>Price:</strong> $${price}</p>
+                        <p><strong>Description:</strong> ${service.description}</p>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading service details:', error);
+            }
+        }
+        
+        // Handle form submission
+        document.getElementById('paymentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!currentService) {
+                showError('No service selected');
+                return;
+            }
+            
+            // Validate card
+            const cardValidation = await validateCard();
+            if (!cardValidation.isValid) {
+                showError(cardValidation.errors.join(', '));
+                return;
+            }
+            
+            // Process payment
+            await processPayment();
+        });
+        
+        async function validateCard() {
+            const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, '');
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+            
+            try {
+                const response = await fetch('/api/payments/validate-card', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        cardNumber: cardNumber,
+                        expiryDate: expiryDate,
+                        cvv: cvv
+                    })
+                });
+                
+                const result = await response.json();
+                return result.data;
+            } catch (error) {
+                console.error('Card validation error:', error);
+                return { isValid: false, errors: ['Card validation failed'] };
+            }
+        }
+        
+        async function processPayment() {
+            showLoading(true);
+            hideMessages();
+            
+            try {
+                const customerData = {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    email: document.getElementById('email').value,
+                    address: document.getElementById('address').value,
+                    city: document.getElementById('city').value,
+                    state: document.getElementById('state').value,
+                    zipCode: document.getElementById('zipCode').value,
+                    country: document.getElementById('country').value
+                };
+                
+                const paymentData = {
+                    cardNumber: document.getElementById('cardNumber').value.replace(/\s/g, ''),
+                    expiryDate: document.getElementById('expiryDate').value,
+                    cvv: document.getElementById('cvv').value
+                };
+                
+                const response = await fetch('/api/payments/process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        serviceId: currentService,
+                        customerData: customerData,
+                        paymentData: paymentData
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showSuccess();
+                    document.getElementById('paymentForm').style.display = 'none';
+                } else {
+                    showError(result.error);
+                }
+            } catch (error) {
+                console.error('Payment processing error:', error);
+                showError('Payment processing failed. Please try again.');
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        function showLoading(show) {
+            const loading = document.getElementById('loading');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (show) {
+                loading.classList.add('show');
+                submitBtn.disabled = true;
+            } else {
+                loading.classList.remove('show');
+                submitBtn.disabled = false;
+            }
+        }
+        
+        function showSuccess() {
+            document.getElementById('successMessage').style.display = 'block';
+        }
+        
+        function showError(message) {
+            document.getElementById('errorText').textContent = message;
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+        
+        function hideMessages() {
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('paymentForm').style.display = 'block';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('paymentModal').addEventListener('click', (e) => {
+            if (e.target.id === 'paymentModal') {
+                closePaymentModal();
+            }
+        });
+        
+        // Card number formatting
+        document.getElementById('cardNumber').addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\s/g, '');
+            value = value.replace(/(\d{4})/g, '$1 ').trim();
+            e.target.value = value;
+        });
+        
+        // Expiry date formatting
+        document.getElementById('expiryDate').addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substr(0, 2) + '/' + value.substr(2, 2);
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html> 

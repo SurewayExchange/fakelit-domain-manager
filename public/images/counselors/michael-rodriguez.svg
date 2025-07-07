@@ -1,0 +1,55 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="160" height="160" rx="80" fill="#F5F6FA"/>
+  
+  <!-- Office background elements -->
+  <rect x="20" y="120" width="120" height="30" fill="#E8EAF6" rx="4"/>
+  <rect x="30" y="130" width="100" height="10" fill="#C5CAE9" rx="2"/>
+  
+  <!-- Body -->
+  <ellipse cx="80" cy="100" rx="35" ry="45" fill="#4A5568"/>
+  
+  <!-- Professional suit -->
+  <path d="M45 85 L115 85 L110 120 L50 120 Z" fill="#2D3748"/>
+  <path d="M50 85 L110 85 L105 110 L55 110 Z" fill="#4A5568"/>
+  
+  <!-- Arms -->
+  <ellipse cx="55" cy="95" rx="8" ry="25" fill="#F7D6C1"/>
+  <ellipse cx="105" cy="95" rx="8" ry="25" fill="#F7D6C1"/>
+  
+  <!-- Head -->
+  <ellipse cx="80" cy="65" rx="25" ry="30" fill="#F7D6C1"/>
+  
+  <!-- Hair - dark, professional cut -->
+  <ellipse cx="80" cy="50" rx="22" ry="8" fill="#2D3748"/>
+  <path d="M58 45 Q80 40 102 45 L100 65 L60 65 Z" fill="#2D3748"/>
+  
+  <!-- Face features -->
+  <ellipse cx="72" cy="60" rx="2" ry="3" fill="#2D3748"/>
+  <ellipse cx="88" cy="60" rx="2" ry="3" fill="#2D3748"/>
+  <path d="M75 70 Q80 75 85 70" stroke="#2D3748" stroke-width="1.5" fill="none"/>
+  
+  <!-- Professional smile -->
+  <path d="M70 68 Q80 73 90 68" stroke="#2D3748" stroke-width="1" fill="none"/>
+  
+  <!-- Neck -->
+  <ellipse cx="80" cy="85" rx="12" ry="8" fill="#F7D6C1"/>
+  
+  <!-- Professional shirt and tie -->
+  <path d="M68 85 L92 85 L90 95 L70 95 Z" fill="#FFFFFF"/>
+  <path d="M75 85 L85 85 L83 95 L77 95 Z" fill="#38A169"/>
+  
+  <!-- Hands -->
+  <ellipse cx="50" cy="115" rx="6" ry="8" fill="#F7D6C1"/>
+  <ellipse cx="110" cy="115" rx="6" ry="8" fill="#F7D6C1"/>
+  
+  <!-- Professional accessories -->
+  <!-- Name tag -->
+  <rect x="70" y="90" width="20" height="8" fill="#FFFFFF" rx="2"/>
+  <text x="80" y="95" text-anchor="middle" font-size="4" fill="#2D3748" font-family="Arial">Michael Rodriguez</text>
+  
+  <!-- Therapeutic materials -->
+  <rect x="25" y="125" width="8" height="12" fill="#4299E1" rx="1"/>
+  <rect x="35" y="125" width="8" height="12" fill="#48BB78" rx="1"/>
+  <rect x="45" y="125" width="8" height="12" fill="#ED8936" rx="1"/>
+</svg>

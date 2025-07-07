@@ -1,0 +1,8 @@
+{
+  "domain": "fakelit.com",
+  "certificate": "auto-generated",
+  "provider": "Let's Encrypt",
+  "status": "active",
+  "expires": "2025-10-05T14:08:40.171Z",
+  "poweredBy": "Fakelit.com"
+}

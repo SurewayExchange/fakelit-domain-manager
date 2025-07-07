@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Test - CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+        .debug-info {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>CareConnect Chat Test</h1>
+        
+        <div class="debug-info">
+            <h3>Debug Information</h3>
+            <p><strong>Server Status:</strong> <span id="serverStatus">Checking...</span></p>
+            <p><strong>Chat Modal Element:</strong> <span id="modalStatus">Checking...</span></p>
+            <p><strong>JavaScript Functions:</strong> <span id="jsStatus">Checking...</span></p>
+        </div>
+
+        <div>
+            <button class="test-button" onclick="testOpenChatModal()">Test Open Chat Modal</button>
+            <button class="test-button" onclick="testCloseChatModal()">Test Close Chat Modal</button>
+            <button class="test-button" onclick="testChatAPI()">Test Chat API</button>
+            <button class="test-button" onclick="checkElements()">Check All Elements</button>
+        </div>
+
+        <div id="results" style="margin-top: 20px;"></div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <img class="counselor-avatar" src="/images/counselors/dr-sarah-mitchell.svg" alt="Counselor" style="width:40px;height:40px;border-radius:50%;margin-right:12px;vertical-align:middle;">
+                <h3>Chat with Dr. Sarah Mitchell</h3>
+                <button class="modal-close" onclick="closeChatModal()">&times;</button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message counselor">
+                        <div class="message-avatar">
+                            <img src="/images/counselors/dr-sarah-mitchell.svg" alt="Counselor">
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm Dr. Sarah Mitchell. How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
+                    <button onclick="sendMessage()" class="btn-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Test functions
+        function testOpenChatModal() {
+            console.log('Testing openChatModal...');
+            addResult('Testing openChatModal...');
+            
+            if (typeof openChatModal === 'function') {
+                openChatModal();
+                addResult('✅ openChatModal function called successfully');
+            } else {
+                addResult('❌ openChatModal function not found');
+                // Try to show modal manually
+                const chatModal = document.getElementById('chatModal');
+                if (chatModal) {
+                    chatModal.style.display = 'flex';
+                    chatModal.classList.add('show');
+                    addResult('✅ Modal shown manually');
+                } else {
+                    addResult('❌ Chat modal element not found');
+                }
+            }
+        }
+
+        function testCloseChatModal() {
+            console.log('Testing closeChatModal...');
+            addResult('Testing closeChatModal...');
+            
+            if (typeof closeChatModal === 'function') {
+                closeChatModal();
+                addResult('✅ closeChatModal function called successfully');
+            } else {
+                addResult('❌ closeChatModal function not found');
+                // Try to hide modal manually
+                const chatModal = document.getElementById('chatModal');
+                if (chatModal) {
+                    chatModal.style.display = 'none';
+                    chatModal.classList.remove('show');
+                    addResult('✅ Modal hidden manually');
+                }
+            }
+        }
+
+        async function testChatAPI() {
+            console.log('Testing Chat API...');
+            addResult('Testing Chat API...');
+            
+            try {
+                const response = await fetch('/api/chat/counseling', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: 'Hello',
+                        counselor: 'dr-sarah-mitchell'
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    addResult('✅ Chat API working: ' + data.response.substring(0, 50) + '...');
+                } else {
+                    addResult('❌ Chat API error: ' + response.status);
+                }
+            } catch (error) {
+                addResult('❌ Chat API error: ' + error.message);
+            }
+        }
+
+        function checkElements() {
+            console.log('Checking all elements...');
+            addResult('Checking all elements...');
+            
+            const chatModal = document.getElementById('chatModal');
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+            
+            addResult('Chat Modal: ' + (chatModal ? '✅ Found' : '❌ Not found'));
+            addResult('Chat Input: ' + (chatInput ? '✅ Found' : '❌ Not found'));
+            addResult('Chat Messages: ' + (chatMessages ? '✅ Found' : '❌ Not found'));
+            
+            if (chatModal) {
+                addResult('Modal display: ' + chatModal.style.display);
+                addResult('Modal classes: ' + chatModal.className);
+            }
+        }
+
+        function addResult(message) {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.style.padding = '10px';
+            div.style.margin = '5px 0';
+            div.style.backgroundColor = '#f8f9fa';
+            div.style.borderRadius = '4px';
+            div.textContent = new Date().toLocaleTimeString() + ': ' + message;
+            results.appendChild(div);
+        }
+
+        // Check server status
+        async function checkServerStatus() {
+            try {
+                const response = await fetch('/health');
+                if (response.ok) {
+                    document.getElementById('serverStatus').textContent = '✅ Running';
+                } else {
+                    document.getElementById('serverStatus').textContent = '❌ Error: ' + response.status;
+                }
+            } catch (error) {
+                document.getElementById('serverStatus').textContent = '❌ Not reachable';
+            }
+        }
+
+        // Check modal element
+        function checkModalElement() {
+            const chatModal = document.getElementById('chatModal');
+            document.getElementById('modalStatus').textContent = chatModal ? '✅ Found' : '❌ Not found';
+        }
+
+        // Check JavaScript functions
+        function checkJavaScriptFunctions() {
+            const functions = ['openChatModal', 'closeChatModal', 'sendMessage'];
+            const status = functions.map(func => {
+                return typeof window[func] === 'function' ? '✅' : '❌';
+            }).join(' ');
+            document.getElementById('jsStatus').textContent = status;
+        }
+
+        // Initialize checks
+        window.addEventListener('load', () => {
+            checkServerStatus();
+            checkModalElement();
+            checkJavaScriptFunctions();
+        });
+
+        // Global functions for testing
+        window.openChatModal = function() {
+            console.log('openChatModal called');
+            const chatModal = document.getElementById('chatModal');
+            if (chatModal) {
+                chatModal.style.display = 'flex';
+                chatModal.classList.add('show');
+                addResult('Modal opened via global function');
+            }
+        };
+
+        window.closeChatModal = function() {
+            console.log('closeChatModal called');
+            const chatModal = document.getElementById('chatModal');
+            if (chatModal) {
+                chatModal.style.display = 'none';
+                chatModal.classList.remove('show');
+                addResult('Modal closed via global function');
+            }
+        };
+
+        window.sendMessage = function() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (message) {
+                addResult('Message sent: ' + message);
+                input.value = '';
+            }
+        };
+
+        window.handleChatKeyPress = function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        };
+    </script>
+</body>
+</html> 

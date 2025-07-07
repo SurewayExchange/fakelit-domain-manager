@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress Services - Fakelit.com</title>
+    <meta name="description" content="Professional WordPress themes, site development, and hosting services. Custom themes, AI support, and premium integration services.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <img src="images/logo.svg" alt="Fakelit.com Logo" class="logo">
+                    <span class="logo-text">Fakelit.com</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="wordpress-services.html" class="active">WordPress</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero wordpress-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>WordPress Excellence</h1>
+                    <h2>Professional Themes, Development & Support</h2>
+                    <p>Transform your online presence with custom WordPress themes, professional development services, and world-class support. From basic themes to enterprise solutions, Fakelit.com delivers WordPress excellence.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#themes" class="btn btn-primary btn-large">Browse Themes</a>
+                        <a href="#services" class="btn btn-secondary btn-large">View Services</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="WordPress development" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Tiers Section -->
+        <section class="support-tiers" id="support">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Support Tiers</h2>
+                    <p>Choose the perfect support level for your WordPress needs</p>
+                </div>
+                
+                <div class="tiers-grid">
+                    <!-- Free Tier -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <h3>Free Support</h3>
+                            <div class="tier-price">
+                                <span class="price">$0</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tier-features">
+                            <ul>
+                                <li>✅ Email support (48-hour response)</li>
+                                <li>✅ Basic documentation access</li>
+                                <li>✅ Community forum access</li>
+                                <li>✅ Knowledge base access</li>
+                            </ul>
+                            
+                            <div class="tier-limitations">
+                                <h4>Limitations:</h4>
+                                <ul>
+                                    <li>❌ No live chat</li>
+                                    <li>❌ No AI assistance</li>
+                                    <li>❌ No priority support</li>
+                                    <li>❌ No custom integrations</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tier-action">
+                            <button class="btn btn-outline" onclick="selectSupportTier('free')">Select Free</button>
+                        </div>
+                    </div>
+
+                    <!-- AI Support Tier -->
+                    <div class="tier-card featured">
+                        <div class="tier-badge">Most Popular</div>
+                        <div class="tier-header">
+                            <h3>AI Support with Live Chat</h3>
+                            <div class="tier-price">
+                                <span class="price">$150</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tier-features">
+                            <ul>
+                                <li>✅ All Free features</li>
+                                <li>✅ AI-powered support assistant</li>
+                                <li>✅ Live chat support (business hours)</li>
+                                <li>✅ Priority email support (24-hour response)</li>
+                                <li>✅ Custom knowledge base</li>
+                                <li>✅ Video tutorials access</li>
+                                <li>✅ Basic integration support</li>
+                            </ul>
+                            
+                            <div class="tier-limitations">
+                                <h4>Limitations:</h4>
+                                <ul>
+                                    <li>❌ No custom development</li>
+                                    <li>❌ No advanced integrations</li>
+                                    <li>❌ No dedicated support agent</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tier-action">
+                            <button class="btn btn-primary" onclick="selectSupportTier('ai_support')">Select AI Support</button>
+                        </div>
+                    </div>
+
+                    <!-- Premium Tier -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <h3>Premium Integration & AI Support</h3>
+                            <div class="tier-price">
+                                <span class="price">$550</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tier-features">
+                            <ul>
+                                <li>✅ All AI Support features</li>
+                                <li>✅ Custom WordPress integrations</li>
+                                <li>✅ Dedicated support agent</li>
+                                <li>✅ 24/7 live chat support</li>
+                                <li>✅ Custom theme development</li>
+                                <li>✅ Plugin customization</li>
+                                <li>✅ Performance optimization</li>
+                                <li>✅ Security hardening</li>
+                                <li>✅ SEO optimization</li>
+                                <li>✅ Backup and recovery</li>
+                                <li>✅ Migration assistance</li>
+                                <li>✅ Training sessions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tier-action">
+                            <button class="btn btn-primary" onclick="selectSupportTier('premium')">Select Premium</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WordPress Themes Section -->
+        <section class="wordpress-themes" id="themes">
+            <div class="container">
+                <div class="section-header">
+                    <h2>WordPress Themes</h2>
+                    <p>Professional themes designed for modern businesses</p>
+                </div>
+                
+                <div class="themes-filter">
+                    <button class="filter-btn active" data-filter="all">All Themes</button>
+                    <button class="filter-btn" data-filter="business">Business</button>
+                    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                    <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+                    <button class="filter-btn" data-filter="blog">Blog</button>
+                    <button class="filter-btn" data-filter="custom">Custom</button>
+                </div>
+                
+                <div class="themes-grid" id="themes-grid">
+                    <!-- Theme cards will be loaded dynamically -->
+                </div>
+                
+                <div class="themes-cta">
+                    <h3>Need a Custom Theme?</h3>
+                    <p>We create bespoke WordPress themes tailored to your brand and requirements</p>
+                    <a href="contact.html" class="btn btn-primary">Request Custom Theme</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- WordPress Services Section -->
+        <section class="wordpress-services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>WordPress Services</h2>
+                    <p>Comprehensive WordPress solutions for every business need</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Theme development" class="service-img">
+                        </div>
+                        <h3>Custom Theme Development</h3>
+                        <p>Bespoke WordPress themes designed specifically for your brand, with custom functionality and unique design elements.</p>
+                        <ul>
+                            <li>Custom design and layout</li>
+                            <li>Responsive mobile-first approach</li>
+                            <li>SEO-optimized structure</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                        <div class="service-price">Starting at $1,500</div>
+                        <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Site development" class="service-img">
+                        </div>
+                        <h3>WordPress Site Development</h3>
+                        <p>Complete WordPress website development from concept to launch, including content creation and optimization.</p>
+                        <ul>
+                            <li>Complete site setup and configuration</li>
+                            <li>Plugin selection and customization</li>
+                            <li>Content creation and optimization</li>
+                            <li>Launch and training</li>
+                        </ul>
+                        <div class="service-price">Starting at $2,500</div>
+                        <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="E-commerce development" class="service-img">
+                        </div>
+                        <h3>E-commerce Development</h3>
+                        <p>WooCommerce-powered online stores with custom features, payment integration, and inventory management.</p>
+                        <ul>
+                            <li>WooCommerce setup and customization</li>
+                            <li>Payment gateway integration</li>
+                            <li>Inventory and order management</li>
+                            <li>Security and compliance</li>
+                        </ul>
+                        <div class="service-price">Starting at $3,500</div>
+                        <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Plugin development" class="service-img">
+                        </div>
+                        <h3>Custom Plugin Development</h3>
+                        <p>Tailored WordPress plugins to extend functionality and meet specific business requirements.</p>
+                        <ul>
+                            <li>Custom functionality development</li>
+                            <li>API integrations</li>
+                            <li>Database optimization</li>
+                            <li>Security and testing</li>
+                        </ul>
+                        <div class="service-price">Starting at $2,000</div>
+                        <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Server Sales Section -->
+        <section class="client-servers">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Independent Client Server Sales</h2>
+                    <p>Dedicated hosting solutions for WordPress clients</p>
+                </div>
+                
+                <div class="server-options">
+                    <div class="server-card">
+                        <h3>Shared Hosting</h3>
+                        <div class="server-price">$9.99/month</div>
+                        <ul>
+                            <li>Perfect for small WordPress sites</li>
+                            <li>1-click WordPress installation</li>
+                            <li>Free SSL certificate</li>
+                            <li>Daily backups</li>
+                            <li>24/7 support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    </div>
+
+                    <div class="server-card featured">
+                        <div class="server-badge">Most Popular</div>
+                        <h3>VPS Hosting</h3>
+                        <div class="server-price">$49.99/month</div>
+                        <ul>
+                            <li>Dedicated resources for WordPress</li>
+                            <li>Custom server configuration</li>
+                            <li>Advanced security features</li>
+                            <li>Performance optimization</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    </div>
+
+                    <div class="server-card">
+                        <h3>Dedicated Server</h3>
+                        <div class="server-price">$199.99/month</div>
+                        <ul>
+                            <li>Full server control</li>
+                            <li>Maximum performance</li>
+                            <li>Custom configurations</li>
+                            <li>Enterprise security</li>
+                            <li>Dedicated support team</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Ready to Start Your WordPress Project?</h2>
+                        <p>Let's discuss your WordPress needs and create the perfect solution for your business.</p>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email Us</h3>
+                                <p>wordpress@fakelit.com</p>
+                                <a href="mailto:wordpress@fakelit.com">Send Email</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h3>Call Us</h3>
+                                <p>(555) 123-4567</p>
+                                <a href="tel:+15551234567">Call Now</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
+                                <h3>Live Chat</h3>
+                                <p>Available 24/7</p>
+                                <a href="#" onclick="openFakelitChat()">Start Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Request WordPress Quote</h3>
+                        <form id="wordpress-quote-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Interest</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="custom-theme">Custom Theme Development</option>
+                                    <option value="site-development">WordPress Site Development</option>
+                                    <option value="ecommerce">E-commerce Development</option>
+                                    <option value="plugin-development">Custom Plugin Development</option>
+                                    <option value="hosting">WordPress Hosting</option>
+                                    <option value="support">Support Services</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget" required>
+                                    <option value="">Select budget range</option>
+                                    <option value="under-1000">Under $1,000</option>
+                                    <option value="1000-5000">$1,000 - $5,000</option>
+                                    <option value="5000-10000">$5,000 - $10,000</option>
+                                    <option value="over-10000">Over $10,000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Project Details</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your WordPress project..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large">Send Quote Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Fakelit.com Logo" class="logo">
+                        <span class="logo-text">Fakelit.com</span>
+                    </div>
+                    <p>Professional WordPress themes, development, and hosting solutions for modern businesses.</p>
+                    <div class="footer-badge">Powered by Fakelit.com</div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>WordPress Services</h4>
+                    <ul>
+                        <li><a href="#themes">Custom Themes</a></li>
+                        <li><a href="#services">Site Development</a></li>
+                        <li><a href="#support">Support Tiers</a></li>
+                        <li><a href="#hosting">WordPress Hosting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: wordpress@fakelit.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Support: 24/7 Available</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fakelit.com. All rights reserved. Powered by Fakelit.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/homepageBot.js"></script>
+    <link rel="stylesheet" href="styles/homepageBot.css">
+    <script src="js/wordpressServices.js"></script>
+</body>
+</html> 

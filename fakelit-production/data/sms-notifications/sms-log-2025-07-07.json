@@ -1,0 +1,292 @@
+[
+  {
+    "to": "513-441-9772",
+    "message": "📧 Fakelit.com email: support@fakelit.com to test@example.com. Subject: Fakelit.com Support Test Email",
+    "template": "fakelitEmail",
+    "data": {
+      "from": "support@fakelit.com",
+      "to": "test@example.com",
+      "subject": "Fakelit.com Support Test Email"
+    },
+    "sid": "mock-sms-1751892055469",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:55.469Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 Fakelit.com email: sales@fakelit.com to prospect@example.com. Subject: Fakelit.com Sales Inquiry",
+    "template": "fakelitEmail",
+    "data": {
+      "from": "sales@fakelit.com",
+      "to": "prospect@example.com",
+      "subject": "Fakelit.com Sales Inquiry"
+    },
+    "sid": "mock-sms-1751892056475",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:56.475Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 Fakelit.com email: m.brooks@fakelit.com to client@example.com. Subject: Fakelit.com Management Update",
+    "template": "fakelitEmail",
+    "data": {
+      "from": "m.brooks@fakelit.com",
+      "to": "client@example.com",
+      "subject": "Fakelit.com Management Update"
+    },
+    "sid": "mock-sms-1751892057481",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:57.481Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 Fakelit.com email: info@fakelit.com to inquiry@example.com. Subject: Fakelit.com Information Request",
+    "template": "fakelitEmail",
+    "data": {
+      "from": "info@fakelit.com",
+      "to": "inquiry@example.com",
+      "subject": "Fakelit.com Information Request"
+    },
+    "sid": "mock-sms-1751892058488",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:58.488Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 Fakelit.com email: accounts@fakelit.com to customer@example.com. Subject: Fakelit.com Account Update",
+    "template": "fakelitEmail",
+    "data": {
+      "from": "accounts@fakelit.com",
+      "to": "customer@example.com",
+      "subject": "Fakelit.com Account Update"
+    },
+    "sid": "mock-sms-1751892059492",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:59.492Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 Fakelit.com email: v.helems@fakelit.com to partner@example.com. Subject: Fakelit.com Partnership Opportunity",
+    "template": "fakelitEmail",
+    "data": {
+      "from": "v.helems@fakelit.com",
+      "to": "partner@example.com",
+      "subject": "Fakelit.com Partnership Opportunity"
+    },
+    "sid": "mock-sms-1751892060498",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:00.498Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 Fakelit.com email: billing@fakelit.com to invoice@example.com. Subject: Fakelit.com Invoice #12345",
+    "template": "fakelitEmail",
+    "data": {
+      "from": "billing@fakelit.com",
+      "to": "invoice@example.com",
+      "subject": "Fakelit.com Invoice #12345"
+    },
+    "sid": "mock-sms-1751892061504",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:01.504Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 New email received at support@fakelit.com from customer@example.com. Subject: Support Request",
+    "template": "emailReceived",
+    "data": {
+      "email": "support@fakelit.com",
+      "sender": "customer@example.com",
+      "subject": "Support Request"
+    },
+    "sid": "mock-sms-1751892062508",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:02.508Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "🌐 Domain example.com purchased successfully! Email access details available.",
+    "template": "domainPurchase",
+    "data": {
+      "domain": "example.com"
+    },
+    "sid": "mock-sms-1751892064512",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:04.512Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "⚠️ Server alert: High CPU usage detected for web-server-01. Action required.",
+    "template": "serverAlert",
+    "data": {
+      "message": "High CPU usage detected",
+      "server": "web-server-01"
+    },
+    "sid": "mock-sms-1751892066517",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:06.517Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "💰 Billing alert: Payment received for customer123. Amount: $199.99",
+    "template": "billingAlert",
+    "data": {
+      "message": "Payment received",
+      "account": "customer123",
+      "amount": "199.99"
+    },
+    "sid": "mock-sms-1751892068523",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:08.523Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "🔒 Security alert: Failed login attempts detected for admin@fakelit.com. Immediate attention required.",
+    "template": "securityAlert",
+    "data": {
+      "message": "Failed login attempts detected",
+      "account": "admin@fakelit.com"
+    },
+    "sid": "mock-sms-1751892070526",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:10.526Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 New email received at support@fakelit.com from customer@example.com. Subject: Test Support Email",
+    "template": "emailReceived",
+    "data": {
+      "email": "support@fakelit.com",
+      "sender": "customer@example.com",
+      "subject": "Test Support Email"
+    },
+    "sid": "mock-sms-1751892072682",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:12.682Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "🆘 New support ticket #TKT-1234567890-TEST from John Doe. Priority: high",
+    "template": "supportTicket",
+    "data": {
+      "ticketId": "TKT-1234567890-TEST",
+      "customer": "John Doe",
+      "priority": "high"
+    },
+    "sid": "mock-sms-1751892072690",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:12.690Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📝 Ticket #TKT-1234567890-TEST updated: in_progress - Agent assigned to ticket",
+    "template": "ticketUpdate",
+    "data": {
+      "ticketId": "TKT-1234567890-TEST",
+      "status": "in_progress",
+      "message": "Agent assigned to ticket"
+    },
+    "sid": "mock-sms-1751892074694",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:14.694Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "✅ Ticket #TKT-1234567890-TEST resolved by Support Agent. Customer: John Doe",
+    "template": "ticketResolved",
+    "data": {
+      "ticketId": "TKT-1234567890-TEST",
+      "agent": "Support Agent",
+      "customer": "John Doe"
+    },
+    "sid": "mock-sms-1751892076698",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:16.698Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "🚨 Ticket #TKT-1234567890-TEST escalated to Management. Customer: John Doe",
+    "template": "ticketEscalated",
+    "data": {
+      "ticketId": "TKT-1234567890-TEST",
+      "level": "Management",
+      "customer": "John Doe"
+    },
+    "sid": "mock-sms-1751892078702",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:18.702Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 New email received at test@fakelit.com from Test Sender. Subject: Test Email Subject",
+    "template": "emailReceived",
+    "data": {
+      "email": "test@fakelit.com",
+      "sender": "Test Sender",
+      "subject": "Test Email Subject"
+    },
+    "sid": "mock-sms-1751895433166",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T13:37:13.166Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": "📧 New email received at test@fakelit.com from Test Sender. Subject: Test Email Subject",
+    "template": "emailReceived",
+    "data": {
+      "email": "test@fakelit.com",
+      "sender": "Test Sender",
+      "subject": "Test Email Subject"
+    },
+    "sid": "mock-sms-1751895902661",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T13:45:02.661Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": null,
+    "template": "emailReceived",
+    "data": {
+      "email": "test@fakelit.com",
+      "sender": "Test Sender",
+      "subject": "Test Email Subject"
+    },
+    "error": "'From' +17026640009 is not a Twilio phone number or Short Code country mismatch",
+    "status": "failed",
+    "timestamp": "2025-07-07T13:47:29.018Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "to": "513-441-9772",
+    "message": null,
+    "template": "emailReceived",
+    "data": {
+      "email": "test@fakelit.com",
+      "sender": "Test Sender",
+      "subject": "Test Email Subject"
+    },
+    "error": "'To' and 'From' number cannot be the same: 513-441-XXXX",
+    "status": "failed",
+    "timestamp": "2025-07-07T13:48:34.087Z",
+    "poweredBy": "Fakelit.com"
+  }
+]

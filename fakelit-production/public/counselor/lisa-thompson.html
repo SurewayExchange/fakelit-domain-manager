@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lisa Thompson - Onboarding Specialist | CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Fakelit.com - Professional hosting, domain management, and web development services. Las Vegas based hosting company with 24/7 support.">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                    <span class="logo-text">CareConnect</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/counselors" class="nav-link">Counselors</a>
+                <a href="/#about" class="nav-link">About</a>
+                <a href="/#contact" class="nav-link">Contact</a>
+                <button class="btn-primary" onclick="openChatModalDirect()">
+                    <i class="fas fa-comments"></i> Talk Now
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Counselor Profile -->
+    <section class="counselor-profile">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face" alt="Lisa Thompson">
+                    <div class="status-badge online">Online Now</div>
+                </div>
+                <div class="profile-info">
+                    <h1>Lisa Thompson</h1>
+                    <p class="counselor-title">Onboarding Specialist</p>
+                    <p class="counselor-specialty">Welcome & Guidance</p>
+                    <div class="counselor-tags">
+                        <span class="tag">Welcome</span>
+                        <span class="tag">Guidance</span>
+                        <span class="tag">Support</span>
+                        <span class="tag">Orientation</span>
+                        <span class="tag">Resources</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn-primary btn-large" onclick="startChatDirect('lisa-thompson')">
+                            <i class="fas fa-comments"></i> Start Session
+                        </button>
+                        <a href="/counselors" class="btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back to Counselors
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>About Lisa Thompson</h2>
+                    <p>Lisa Thompson is our dedicated Onboarding Specialist who welcomes new users to CareConnect and guides them through their mental health journey. With over 8 years of experience in user experience and mental health advocacy, Lisa helps individuals find the right counselor and services for their needs.</p>
+                    
+                    <h3>Areas of Expertise</h3>
+                    <ul>
+                        <li>Platform orientation and navigation</li>
+                        <li>Counselor matching and recommendations</li>
+                        <li>Service explanation and guidance</li>
+                        <li>Resource connection and referrals</li>
+                        <li>User support and troubleshooting</li>
+                        <li>Mental health education and awareness</li>
+                    </ul>
+
+                    <h3>Approach</h3>
+                    <p>Lisa takes a warm, welcoming approach to help new users feel comfortable and confident using CareConnect. She listens to your needs, explains available services, and connects you with the most appropriate counselor for your situation.</p>
+                </div>
+
+                <div class="profile-section">
+                    <h2>How I Can Help You</h2>
+                    <div class="help-grid">
+                        <div class="help-card">
+                            <i class="fas fa-home"></i>
+                            <h3>Welcome & Orientation</h3>
+                            <p>Get familiar with CareConnect's features and learn how to make the most of your mental health support.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-user-friends"></i>
+                            <h3>Counselor Matching</h3>
+                            <p>Find the perfect counselor based on your specific needs, preferences, and mental health goals.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-info-circle"></i>
+                            <h3>Service Guidance</h3>
+                            <p>Learn about different counseling approaches and services available to support your well-being.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Ongoing Support</h3>
+                            <p>Get help navigating the platform and accessing additional resources as your needs evolve.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Getting Started with CareConnect</h2>
+                    <div class="onboarding-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Welcome & Introduction</h3>
+                                <p>Let's start with a warm welcome and learn about what brings you to CareConnect today.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Needs Assessment</h3>
+                                <p>We'll discuss your current situation and what type of support would be most helpful.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Counselor Matching</h3>
+                                <p>Based on your needs, I'll recommend the best counselor for your situation.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Platform Orientation</h3>
+                                <p>Learn how to use CareConnect's features and get the most from your sessions.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h3>Begin Your Journey</h3>
+                                <p>Start your first session with confidence, knowing you have ongoing support available.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Start Your Onboarding</h2>
+                    <div class="chat-form">
+                        <div class="form-group">
+                            <label for="sessionType">What brings you to CareConnect?</label>
+                            <select id="sessionType" class="form-control">
+                                <option value="general">General mental health support</option>
+                                <option value="anxiety">Anxiety or stress</option>
+                                <option value="depression">Depression or mood</option>
+                                <option value="relationships">Relationship issues</option>
+                                <option value="career">Career or work stress</option>
+                                <option value="crisis">Crisis support</option>
+                                <option value="other">Other concerns</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sessionMessage">Tell me about yourself (Optional)</label>
+                            <textarea id="sessionMessage" class="form-control" placeholder="Share a bit about your situation and what you're looking for..." rows="3"></textarea>
+                        </div>
+                        <button class="btn-primary btn-large" onclick="startChatDirect('lisa-thompson')">
+                            <i class="fas fa-comments"></i> Begin Onboarding with Lisa
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                        <span class="logo-text">CareConnect</span>
+                    </div>
+                    <p>Professional AI-powered mental health support available 24/7. Your well-being is our priority.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#services">Services</a></li>
+                        <li><a href="/counselors">Counselors</a></li>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul class="emergency-links">
+                        <li><a href="tel:988">National Suicide Prevention Lifeline: 988</a></li>
+                        <li><a href="tel:741741">Crisis Text Line: Text HOME to 741741</a></li>
+                        <li><a href="tel:911">Emergency Services: 911</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareConnect. All rights reserved. Powered by <a href="https://fakelit.com">Fakelit.com</a></p>
+                <p>2300 W Sahara Ave Suite 800, Las Vegas NV 89102 | Phone: 702-664-0009 | Email: info@quibe.ai</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3>Chat with Lisa Thompson</h3>
+                <button class="modal-close" onclick="closeChatModal()">&times;</button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message counselor">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" alt="Lisa Thompson">
+                        </div>
+                        <div class="message-content">
+                            <p>Welcome to CareConnect! I'm Lisa, your Onboarding Specialist. I'm here to help you get started and find the perfect counselor for your needs. What brings you to CareConnect today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
+                    <button onclick="sendMessage()" class="btn-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .counselor-profile {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-avatar {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-avatar img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 6px solid var(--white);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+
+        .counselor-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .counselor-specialty {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .counselor-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .profile-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section {
+            margin-bottom: 40px;
+        }
+
+        .profile-section h2 {
+            font-size: 1.8rem;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+
+        .profile-section h3 {
+            font-size: 1.3rem;
+            color: var(--gray-800);
+            margin: 25px 0 15px;
+        }
+
+        .profile-section p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .profile-section ul {
+            color: var(--gray-600);
+            line-height: 1.7;
+            padding-left: 20px;
+        }
+
+        .profile-section li {
+            margin-bottom: 8px;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .help-card {
+            background: var(--gray-50);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+
+        .help-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .help-card h3 {
+            font-size: 1.2rem;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+
+        .help-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .onboarding-steps {
+            margin-top: 25px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: var(--gray-50);
+            border-radius: 15px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        .chat-form {
+            background: var(--gray-50);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .profile-avatar img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/animations.js"></script>
+    <script>
+        // Direct function implementations that work independently
+        function openChatModalDirect() {
+            console.log('openChatModalDirect called');
+            const chatModal = document.getElementById('chatModal');
+            console.log('chatModal element:', chatModal);
+            if (chatModal) {
+                chatModal.style.display = 'flex';
+                chatModal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                console.log('Chat modal opened successfully');
+                
+                // Focus on input
+                setTimeout(() => {
+                    const chatInput = document.getElementById('chatInput');
+                    if (chatInput) {
+                        chatInput.focus();
+                    }
+                }, 300);
+            } else {
+                console.error('Chat modal not found!');
+                alert('Chat modal not found. Please refresh the page.');
+            }
+        }
+        
+        function startChatDirect(counselorId) {
+            console.log('startChatDirect called with counselorId:', counselorId);
+            // Set counselor context
+            localStorage.setItem('selectedCounselor', counselorId);
+            console.log('Opening chat modal...');
+            openChatModalDirect();
+        }
+        
+        function closeChatModal() {
+            console.log('closeChatModal called');
+            const chatModal = document.getElementById('chatModal');
+            if (chatModal) {
+                chatModal.style.display = 'none';
+                chatModal.classList.remove('show');
+                document.body.style.overflow = '';
+                console.log('Chat modal closed successfully');
+            }
+        }
+        
+        // Legacy functions for compatibility
+        function startChat(counselorId) {
+            console.log('startChat called with counselorId:', counselorId);
+            startChatDirect(counselorId);
+        }
+        
+        function openChatModal() {
+            console.log('openChatModal called');
+            openChatModalDirect();
+        }
+        
+        // Add event listeners when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Lisa Thompson page loaded');
+            
+            // Test button functionality
+            const startSessionBtn = document.querySelector('button[onclick="startChatDirect(\'lisa-thompson\')"]');
+            const talkNowBtn = document.querySelector('button[onclick="openChatModalDirect()"]');
+            const beginOnboardingBtn = document.querySelector('button[onclick="startChatDirect(\'lisa-thompson\')"]');
+            
+            console.log('Start Session button:', startSessionBtn);
+            console.log('Talk Now button:', talkNowBtn);
+            console.log('Begin Onboarding button:', beginOnboardingBtn);
+            
+            // Add click event listeners as backup
+            if (startSessionBtn) {
+                startSessionBtn.addEventListener('click', function() {
+                    console.log('Start Session button clicked via event listener');
+                    startChatDirect('lisa-thompson');
+                });
+            }
+            
+            if (talkNowBtn) {
+                talkNowBtn.addEventListener('click', function() {
+                    console.log('Talk Now button clicked via event listener');
+                    openChatModalDirect();
+                });
+            }
+            
+            if (beginOnboardingBtn) {
+                beginOnboardingBtn.addEventListener('click', function() {
+                    console.log('Begin Onboarding button clicked via event listener');
+                    startChatDirect('lisa-thompson');
+                });
+            }
+            
+            // Test if modal exists
+            const chatModal = document.getElementById('chatModal');
+            console.log('Chat modal found:', chatModal);
+            if (chatModal) {
+                console.log('Chat modal HTML:', chatModal.outerHTML.substring(0, 200) + '...');
+            }
+            
+            // Add chat functionality
+            const chatInput = document.getElementById('chatInput');
+            const sendButton = document.querySelector('.btn-send');
+            const chatMessages = document.getElementById('chatMessages');
+            
+            if (chatInput && sendButton && chatMessages) {
+                console.log('Chat elements found, setting up chat functionality');
+                
+                // Handle send button click
+                sendButton.addEventListener('click', function() {
+                    sendMessage();
+                });
+                
+                // Handle Enter key press
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+        
+        // Simple message sending function
+        function sendMessage() {
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+            
+            if (!chatInput || !chatMessages) {
+                console.error('Chat elements not found');
+                return;
+            }
+            
+            const message = chatInput.value.trim();
+            if (!message) return;
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user';
+            userMessage.innerHTML = `
+                <div class="message-content">
+                    <p>${message}</p>
+                </div>
+            `;
+            chatMessages.appendChild(userMessage);
+            
+            // Clear input
+            chatInput.value = '';
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Simulate Lisa's response
+            setTimeout(() => {
+                const counselorMessage = document.createElement('div');
+                counselorMessage.className = 'message counselor';
+                counselorMessage.innerHTML = `
+                    <div class="message-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" alt="Lisa Thompson">
+                    </div>
+                    <div class="message-content">
+                        <p>${getLisaResponse(message)}</p>
+                    </div>
+                `;
+                chatMessages.appendChild(counselorMessage);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+        }
+        
+        // Simple response function for Lisa
+        function getLisaResponse(message) {
+            const responses = [
+                "Thank you for sharing that with me. I'm here to help you navigate your mental health journey.",
+                "I understand how challenging that can be. Let's work together to find the right support for you.",
+                "That sounds like something we can definitely help with. I'd love to connect you with the perfect counselor.",
+                "I appreciate you opening up to me. Your well-being is our top priority here at CareConnect.",
+                "That's a great question! Let me help you understand how we can support you through this.",
+                "I'm here to listen and guide you. What specific type of support are you looking for?",
+                "Thank you for reaching out. You've taken an important first step by seeking help.",
+                "I can see this is important to you. Let's explore how CareConnect can best serve your needs."
+            ];
+            
+            // Simple keyword matching
+            const lowerMessage = message.toLowerCase();
+            if (lowerMessage.includes('anxiety') || lowerMessage.includes('stress')) {
+                return "I understand anxiety and stress can be overwhelming. We have excellent counselors who specialize in anxiety management and stress reduction techniques.";
+            } else if (lowerMessage.includes('depression') || lowerMessage.includes('sad')) {
+                return "Depression is a serious concern, and I'm glad you're seeking help. We have compassionate counselors who specialize in depression support.";
+            } else if (lowerMessage.includes('relationship') || lowerMessage.includes('family')) {
+                return "Relationship and family issues can be complex. We have counselors who specialize in family therapy and relationship counseling.";
+            } else if (lowerMessage.includes('help') || lowerMessage.includes('support')) {
+                return "I'm here to help! Let me guide you through our services and find the perfect counselor for your situation.";
+            } else {
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+        }
+        
+        // Handle chat key press (for compatibility)
+        function handleChatKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html> 

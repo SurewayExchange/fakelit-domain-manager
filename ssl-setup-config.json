@@ -1,0 +1,21 @@
+{
+  "domain": "fakelit.com",
+  "subdomains": [
+    "www.fakelit.com"
+  ],
+  "certificateType": "lets-encrypt",
+  "autoRenewal": true,
+  "forceHttps": true,
+  "setupDate": "2025-07-07T15:30:04.390Z",
+  "status": "ready-for-setup",
+  "steps": [
+    "Access Cloudways Dashboard",
+    "Navigate to SSL Settings",
+    "Add Primary Domain",
+    "Enable SSL for Primary Domain",
+    "Add www Subdomain",
+    "Enable SSL for www Subdomain",
+    "Force HTTPS Redirect",
+    "Verify SSL Installation"
+  ]
+}

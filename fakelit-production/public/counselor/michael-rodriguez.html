@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Rodriguez - Substance Abuse Counselor | CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Fakelit.com - Professional hosting, domain management, and web development services. Las Vegas based hosting company with 24/7 support.">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                    <span class="logo-text">CareConnect</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/counselors" class="nav-link">Counselors</a>
+                <a href="/#about" class="nav-link">About</a>
+                <a href="/#contact" class="nav-link">Contact</a>
+                <button class="btn-primary" onclick="openChatModal()">
+                    <i class="fas fa-comments"></i> Talk Now
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Counselor Profile -->
+    <section class="counselor-profile">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Michael Rodriguez">
+                    <div class="status-badge online">Online Now</div>
+                </div>
+                <div class="profile-info">
+                    <h1>Michael Rodriguez</h1>
+                    <p class="counselor-title">Substance Abuse Counselor</p>
+                    <p class="counselor-specialty">Recovery & Harm Reduction</p>
+                    <div class="counselor-tags">
+                        <span class="tag">Recovery</span>
+                        <span class="tag">Relapse Prevention</span>
+                        <span class="tag">Support</span>
+                        <span class="tag">Harm Reduction</span>
+                        <span class="tag">Addiction</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn-primary btn-large" onclick="startChat('michael-rodriguez')">
+                            <i class="fas fa-comments"></i> Start Session
+                        </button>
+                        <a href="/counselors" class="btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back to Counselors
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>About Michael Rodriguez</h2>
+                    <p>Michael Rodriguez is a certified Substance Abuse Counselor with over 15 years of experience supporting individuals in recovery. He specializes in harm reduction strategies, relapse prevention, and providing compassionate support for those struggling with substance use disorders.</p>
+                    
+                    <h3>Areas of Expertise</h3>
+                    <ul>
+                        <li>Substance use disorder treatment</li>
+                        <li>Harm reduction strategies</li>
+                        <li>Relapse prevention planning</li>
+                        <li>Recovery support and motivation</li>
+                        <li>Family support and education</li>
+                        <li>12-step and alternative recovery approaches</li>
+                    </ul>
+
+                    <h3>Approach</h3>
+                    <p>Michael uses a non-judgmental, person-centered approach that meets individuals where they are in their recovery journey. He combines evidence-based treatment methods with practical support to help clients build sustainable recovery and improve their quality of life.</p>
+                </div>
+
+                <div class="profile-section">
+                    <h2>How I Can Help You</h2>
+                    <div class="help-grid">
+                        <div class="help-card">
+                            <i class="fas fa-heart"></i>
+                            <h3>Recovery Support</h3>
+                            <p>Provide compassionate support and guidance throughout your recovery journey.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Harm Reduction</h3>
+                            <p>Learn strategies to reduce risks and stay safer while working towards recovery.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-route"></i>
+                            <h3>Relapse Prevention</h3>
+                            <p>Develop personalized strategies to prevent relapse and maintain sobriety.</p>
+                        </div>
+                        <div class="help-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Family Support</h3>
+                            <p>Help families understand addiction and support their loved ones in recovery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Recovery Resources</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <i class="fas fa-phone"></i>
+                            <h3>National Drug & Alcohol Helpline</h3>
+                            <p>Call <strong>1-800-662-HELP (4357)</strong> for 24/7 support</p>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fas fa-globe"></i>
+                            <h3>SAMHSA Treatment Locator</h3>
+                            <p>Find treatment facilities near you at <strong>findtreatment.samhsa.gov</strong></p>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Recovery Community</h3>
+                            <p>Connect with others in recovery through support groups and communities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Start Your Session</h2>
+                    <div class="chat-form">
+                        <div class="form-group">
+                            <label for="sessionType">Session Type</label>
+                            <select id="sessionType" class="form-control">
+                                <option value="general">General Recovery Support</option>
+                                <option value="harm-reduction">Harm Reduction</option>
+                                <option value="relapse-prevention">Relapse Prevention</option>
+                                <option value="motivation">Motivation & Support</option>
+                                <option value="family">Family Support</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sessionMessage">Brief Description (Optional)</label>
+                            <textarea id="sessionMessage" class="form-control" placeholder="Tell me about your recovery journey..." rows="3"></textarea>
+                        </div>
+                        <button class="btn-primary btn-large" onclick="startChat('michael-rodriguez')">
+                            <i class="fas fa-comments"></i> Begin Session with Michael
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/images/logo.svg" alt="CareConnect" class="logo">
+                        <span class="logo-text">CareConnect</span>
+                    </div>
+                    <p>Professional AI-powered mental health support available 24/7. Your well-being is our priority.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#services">Services</a></li>
+                        <li><a href="/counselors">Counselors</a></li>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul class="emergency-links">
+                        <li><a href="tel:988">National Suicide Prevention Lifeline: 988</a></li>
+                        <li><a href="tel:741741">Crisis Text Line: Text HOME to 741741</a></li>
+                        <li><a href="tel:911">Emergency Services: 911</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareConnect. All rights reserved. Powered by <a href="https://fakelit.com">Fakelit.com</a></p>
+                <p>2300 W Sahara Ave Suite 800, Las Vegas NV 89102 | Phone: 702-664-0009 | Email: info@quibe.ai</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3>Chat with Michael Rodriguez</h3>
+                <button class="modal-close" onclick="closeChatModal()">&times;</button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message counselor">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="Michael Rodriguez">
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm Michael Rodriguez, your Substance Abuse Counselor. I'm here to support you in your recovery journey with compassion and understanding. What would you like to work on today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
+                    <button onclick="sendMessage()" class="btn-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .counselor-profile {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-avatar {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-avatar img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 6px solid var(--white);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+
+        .counselor-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .counselor-specialty {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .counselor-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .profile-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section {
+            margin-bottom: 40px;
+        }
+
+        .profile-section h2 {
+            font-size: 1.8rem;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+
+        .profile-section h3 {
+            font-size: 1.3rem;
+            color: var(--gray-800);
+            margin: 25px 0 15px;
+        }
+
+        .profile-section p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .profile-section ul {
+            color: var(--gray-600);
+            line-height: 1.7;
+            padding-left: 20px;
+        }
+
+        .profile-section li {
+            margin-bottom: 8px;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .help-card {
+            background: var(--gray-50);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+
+        .help-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .help-card h3 {
+            font-size: 1.2rem;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+
+        .help-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .resource-card {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .resource-card i {
+            font-size: 2.5rem;
+            color: #0369a1;
+            margin-bottom: 15px;
+        }
+
+        .resource-card h3 {
+            font-size: 1.2rem;
+            color: #0c4a6e;
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            color: #0c4a6e;
+            font-size: 1rem;
+        }
+
+        .chat-form {
+            background: var(--gray-50);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .profile-avatar img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .help-grid, .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/animations.js"></script>
+    <script>
+        function startChat(counselorId) {
+            // Set counselor context
+            localStorage.setItem('selectedCounselor', counselorId);
+            openChatModal();
+        }
+    </script>
+</body>
+</html> 

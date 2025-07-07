@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Input/Output Test - CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .voice-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .voice-btn {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .voice-btn.primary {
+            background: #007bff;
+            color: white;
+        }
+        .voice-btn.primary:hover {
+            background: #0056b3;
+        }
+        .voice-btn.secondary {
+            background: #6c757d;
+            color: white;
+        }
+        .voice-btn.secondary:hover {
+            background: #545b62;
+        }
+        .voice-btn.recording {
+            background: #dc3545;
+            animation: pulse 1.5s infinite;
+        }
+        .transcript {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            min-height: 100px;
+            border: 1px solid #dee2e6;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1><i class="fas fa-microphone"></i> Voice Input/Output Test</h1>
+        <p>This page tests the voice input and output capabilities of CareConnect.</p>
+
+        <div class="test-section">
+            <h2>Voice Input Test</h2>
+            <p>Click the microphone button to start voice recording. Speak clearly and the transcribed text will appear below.</p>
+            
+            <div class="voice-controls">
+                <button id="startVoiceBtn" class="voice-btn primary">
+                    <i class="fas fa-microphone"></i> Start Recording
+                </button>
+                <button id="stopVoiceBtn" class="voice-btn secondary" style="display: none;">
+                    <i class="fas fa-stop"></i> Stop Recording
+                </button>
+                <span id="voiceStatus" class="status info" style="display: none;">Ready to record</span>
+            </div>
+
+            <div class="transcript" id="transcript">
+                <em>Transcribed text will appear here...</em>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Voice Output Test</h2>
+            <p>Enter text below and click "Speak" to test text-to-speech functionality.</p>
+            
+            <div class="voice-controls">
+                <input type="text" id="speakText" placeholder="Enter text to speak..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <button id="speakBtn" class="voice-btn primary">
+                    <i class="fas fa-volume-up"></i> Speak
+                </button>
+                <button id="stopSpeakBtn" class="voice-btn secondary">
+                    <i class="fas fa-stop"></i> Stop
+                </button>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>System Status</h2>
+            <div id="systemStatus">
+                <p>Checking system capabilities...</p>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Instructions</h2>
+            <ul>
+                <li><strong>Voice Input:</strong> Click "Start Recording" and speak clearly. The system will transcribe your speech in real-time.</li>
+                <li><strong>Voice Output:</strong> Type text in the input field and click "Speak" to hear it spoken back to you.</li>
+                <li><strong>Browser Support:</strong> This feature requires a modern browser with microphone access.</li>
+                <li><strong>Privacy:</strong> Voice data is processed locally and not stored permanently.</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <a href="/" class="voice-btn secondary">
+                <i class="fas fa-arrow-left"></i> Back to CareConnect
+            </a>
+        </div>
+    </div>
+
+    <script src="/js/voiceInputOutput.js"></script>
+    <script>
+        let voiceIO = null;
+        let isRecording = false;
+
+        // Initialize voice system
+        async function initializeVoice() {
+            try {
+                voiceIO = new VoiceInputOutput({
+                    apiUrl: '/api/voice',
+                    autoStart: false,
+                    continuousMode: false,
+                    language: 'en-US'
+                });
+
+                // Set up event handlers
+                voiceIO.onTranscription((text) => {
+                    document.getElementById('transcript').innerHTML = `<strong>Transcribed:</strong> ${text}`;
+                });
+
+                voiceIO.onError((error) => {
+                    showStatus(`Voice error: ${error}`, 'error');
+                    stopRecording();
+                });
+
+                showStatus('Voice system initialized successfully!', 'success');
+                updateSystemStatus();
+            } catch (error) {
+                showStatus(`Failed to initialize voice system: ${error}`, 'error');
+            }
+        }
+
+        // Start voice recording
+        async function startRecording() {
+            if (!voiceIO) {
+                showStatus('Voice system not initialized', 'error');
+                return;
+            }
+
+            try {
+                const success = await voiceIO.startRecording();
+                if (success) {
+                    isRecording = true;
+                    document.getElementById('startVoiceBtn').style.display = 'none';
+                    document.getElementById('stopVoiceBtn').style.display = 'inline-block';
+                    document.getElementById('startVoiceBtn').classList.add('recording');
+                    showStatus('Recording... Speak now!', 'info');
+                } else {
+                    showStatus('Failed to start recording', 'error');
+                }
+            } catch (error) {
+                showStatus(`Recording error: ${error}`, 'error');
+            }
+        }
+
+        // Stop voice recording
+        function stopRecording() {
+            if (voiceIO && isRecording) {
+                voiceIO.stopRecording();
+                isRecording = false;
+                document.getElementById('startVoiceBtn').style.display = 'inline-block';
+                document.getElementById('stopVoiceBtn').style.display = 'none';
+                document.getElementById('startVoiceBtn').classList.remove('recording');
+                showStatus('Recording stopped', 'info');
+            }
+        }
+
+        // Speak text
+        async function speakText() {
+            const text = document.getElementById('speakText').value.trim();
+            if (!text) {
+                showStatus('Please enter text to speak', 'error');
+                return;
+            }
+
+            if (!voiceIO) {
+                showStatus('Voice system not initialized', 'error');
+                return;
+            }
+
+            try {
+                await voiceIO.speakText(text);
+                showStatus('Speaking...', 'info');
+            } catch (error) {
+                showStatus(`Speech error: ${error}`, 'error');
+            }
+        }
+
+        // Stop speaking
+        function stopSpeaking() {
+            if (voiceIO) {
+                voiceIO.stopSpeaking();
+                showStatus('Speech stopped', 'info');
+            }
+        }
+
+        // Show status message
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('voiceStatus');
+            statusEl.textContent = message;
+            statusEl.className = `status ${type}`;
+            statusEl.style.display = 'block';
+        }
+
+        // Update system status
+        function updateSystemStatus() {
+            const statusEl = document.getElementById('systemStatus');
+            const isSupported = voiceIO ? voiceIO.isSupported() : false;
+            
+            statusEl.innerHTML = `
+                <p><strong>Voice Recognition:</strong> ${isSupported ? '✅ Supported' : '❌ Not Supported'}</p>
+                <p><strong>Speech Synthesis:</strong> ${'speechSynthesis' in window ? '✅ Supported' : '❌ Not Supported'}</p>
+                <p><strong>Microphone Access:</strong> ${navigator.mediaDevices ? '✅ Available' : '❌ Not Available'}</p>
+            `;
+        }
+
+        // Event listeners
+        document.getElementById('startVoiceBtn').addEventListener('click', startRecording);
+        document.getElementById('stopVoiceBtn').addEventListener('click', stopRecording);
+        document.getElementById('speakBtn').addEventListener('click', speakText);
+        document.getElementById('stopSpeakBtn').addEventListener('click', stopSpeaking);
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeVoice);
+    </script>
+</body>
+</html> 

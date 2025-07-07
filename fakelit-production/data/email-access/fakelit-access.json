@@ -1,0 +1,362 @@
+{
+  "domain": "fakelit.com",
+  "accessDetails": {
+    "domain": "fakelit.com",
+    "webmailUrl": "https://webmail.fakelit.com",
+    "adminPanel": "https://admin.fakelit.com",
+    "supportUrl": "https://support.fakelit.com",
+    "imapSettings": {
+      "server": "imap.fakelit.com",
+      "port": 993,
+      "security": "SSL/TLS",
+      "username": "your-email@fakelit.com",
+      "authentication": "Normal password"
+    },
+    "smtpSettings": {
+      "server": "smtp.fakelit.com",
+      "port": 587,
+      "security": "STARTTLS",
+      "username": "your-email@fakelit.com",
+      "authentication": "Normal password"
+    },
+    "pop3Settings": {
+      "server": "pop3.fakelit.com",
+      "port": 995,
+      "security": "SSL/TLS",
+      "username": "your-email@fakelit.com",
+      "authentication": "Normal password"
+    },
+    "mobileSettings": {
+      "imap": {
+        "server": "imap.fakelit.com",
+        "port": 993,
+        "security": "SSL/TLS"
+      },
+      "smtp": {
+        "server": "smtp.fakelit.com",
+        "port": 587,
+        "security": "STARTTLS"
+      }
+    }
+  },
+  "emailAddresses": [
+    {
+      "address": "support@fakelit.com",
+      "password": "OB*tmO64KN65rnaz",
+      "status": "active",
+      "storage": "2GB",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "accessDetails": {
+        "webmail": "https://webmail.fakelit.com",
+        "imap": {
+          "server": "imap.fakelit.com",
+          "port": 993,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "smtp": {
+          "server": "smtp.fakelit.com",
+          "port": 587,
+          "security": "STARTTLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "pop3": {
+          "server": "pop3.fakelit.com",
+          "port": 995,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "mobile": {
+          "imap": {
+            "server": "imap.fakelit.com",
+            "port": 993,
+            "security": "SSL/TLS"
+          },
+          "smtp": {
+            "server": "smtp.fakelit.com",
+            "port": 587,
+            "security": "STARTTLS"
+          }
+        }
+      },
+      "createdAt": "2025-07-07T13:58:37.575Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "sales@fakelit.com",
+      "password": "xZ%^xAi3hH5h4Rzf",
+      "status": "active",
+      "storage": "2GB",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "accessDetails": {
+        "webmail": "https://webmail.fakelit.com",
+        "imap": {
+          "server": "imap.fakelit.com",
+          "port": 993,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "smtp": {
+          "server": "smtp.fakelit.com",
+          "port": 587,
+          "security": "STARTTLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "pop3": {
+          "server": "pop3.fakelit.com",
+          "port": 995,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "mobile": {
+          "imap": {
+            "server": "imap.fakelit.com",
+            "port": 993,
+            "security": "SSL/TLS"
+          },
+          "smtp": {
+            "server": "smtp.fakelit.com",
+            "port": 587,
+            "security": "STARTTLS"
+          }
+        }
+      },
+      "createdAt": "2025-07-07T13:58:37.583Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "m.brooks@fakelit.com",
+      "password": "kkVIJz%NIDeU1dkt",
+      "status": "active",
+      "storage": "2GB",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "accessDetails": {
+        "webmail": "https://webmail.fakelit.com",
+        "imap": {
+          "server": "imap.fakelit.com",
+          "port": 993,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "smtp": {
+          "server": "smtp.fakelit.com",
+          "port": 587,
+          "security": "STARTTLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "pop3": {
+          "server": "pop3.fakelit.com",
+          "port": 995,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "mobile": {
+          "imap": {
+            "server": "imap.fakelit.com",
+            "port": 993,
+            "security": "SSL/TLS"
+          },
+          "smtp": {
+            "server": "smtp.fakelit.com",
+            "port": 587,
+            "security": "STARTTLS"
+          }
+        }
+      },
+      "createdAt": "2025-07-07T13:58:37.583Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "info@fakelit.com",
+      "password": "JK@hhN$GOkHoZ3qt",
+      "status": "active",
+      "storage": "2GB",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "accessDetails": {
+        "webmail": "https://webmail.fakelit.com",
+        "imap": {
+          "server": "imap.fakelit.com",
+          "port": 993,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "smtp": {
+          "server": "smtp.fakelit.com",
+          "port": 587,
+          "security": "STARTTLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "pop3": {
+          "server": "pop3.fakelit.com",
+          "port": 995,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "mobile": {
+          "imap": {
+            "server": "imap.fakelit.com",
+            "port": 993,
+            "security": "SSL/TLS"
+          },
+          "smtp": {
+            "server": "smtp.fakelit.com",
+            "port": 587,
+            "security": "STARTTLS"
+          }
+        }
+      },
+      "createdAt": "2025-07-07T13:58:37.583Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "accounts@fakelit.com",
+      "password": "KfGo0dFbpaRlFVKu",
+      "status": "active",
+      "storage": "2GB",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "accessDetails": {
+        "webmail": "https://webmail.fakelit.com",
+        "imap": {
+          "server": "imap.fakelit.com",
+          "port": 993,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "smtp": {
+          "server": "smtp.fakelit.com",
+          "port": 587,
+          "security": "STARTTLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "pop3": {
+          "server": "pop3.fakelit.com",
+          "port": 995,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "mobile": {
+          "imap": {
+            "server": "imap.fakelit.com",
+            "port": 993,
+            "security": "SSL/TLS"
+          },
+          "smtp": {
+            "server": "smtp.fakelit.com",
+            "port": 587,
+            "security": "STARTTLS"
+          }
+        }
+      },
+      "createdAt": "2025-07-07T13:58:37.583Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "v.helems@fakelit.com",
+      "password": "zSU@UM^Ag2KUwdm$",
+      "status": "active",
+      "storage": "2GB",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "accessDetails": {
+        "webmail": "https://webmail.fakelit.com",
+        "imap": {
+          "server": "imap.fakelit.com",
+          "port": 993,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "smtp": {
+          "server": "smtp.fakelit.com",
+          "port": 587,
+          "security": "STARTTLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "pop3": {
+          "server": "pop3.fakelit.com",
+          "port": 995,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "mobile": {
+          "imap": {
+            "server": "imap.fakelit.com",
+            "port": 993,
+            "security": "SSL/TLS"
+          },
+          "smtp": {
+            "server": "smtp.fakelit.com",
+            "port": 587,
+            "security": "STARTTLS"
+          }
+        }
+      },
+      "createdAt": "2025-07-07T13:58:37.583Z",
+      "poweredBy": "Fakelit.com"
+    },
+    {
+      "address": "billing@fakelit.com",
+      "password": "O6K#sD2u3s2UtEZJ",
+      "status": "active",
+      "storage": "2GB",
+      "forwarding": "marquibelbrooks@gmail.com",
+      "accessDetails": {
+        "webmail": "https://webmail.fakelit.com",
+        "imap": {
+          "server": "imap.fakelit.com",
+          "port": 993,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "smtp": {
+          "server": "smtp.fakelit.com",
+          "port": 587,
+          "security": "STARTTLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "pop3": {
+          "server": "pop3.fakelit.com",
+          "port": 995,
+          "security": "SSL/TLS",
+          "username": "your-email@fakelit.com",
+          "authentication": "Normal password"
+        },
+        "mobile": {
+          "imap": {
+            "server": "imap.fakelit.com",
+            "port": 993,
+            "security": "SSL/TLS"
+          },
+          "smtp": {
+            "server": "smtp.fakelit.com",
+            "port": 587,
+            "security": "STARTTLS"
+          }
+        }
+      },
+      "createdAt": "2025-07-07T13:58:37.583Z",
+      "poweredBy": "Fakelit.com"
+    }
+  ],
+  "createdAt": "2025-07-07T13:58:37.583Z",
+  "updatedAt": "2025-07-07T13:58:37.583Z",
+  "poweredBy": "Fakelit.com"
+}

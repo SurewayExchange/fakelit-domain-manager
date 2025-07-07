@@ -1,0 +1,75 @@
+[
+  {
+    "from": "support@fakelit.com",
+    "to": "test@example.com",
+    "subject": "Fakelit.com Support Test Email",
+    "messageId": "mock-email-1751892055459",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:55.459Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "from": "sales@fakelit.com",
+    "to": "prospect@example.com",
+    "subject": "Fakelit.com Sales Inquiry",
+    "messageId": "mock-email-1751892056472",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:56.472Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "from": "m.brooks@fakelit.com",
+    "to": "client@example.com",
+    "subject": "Fakelit.com Management Update",
+    "messageId": "mock-email-1751892057479",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:57.479Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "from": "info@fakelit.com",
+    "to": "inquiry@example.com",
+    "subject": "Fakelit.com Information Request",
+    "messageId": "mock-email-1751892058486",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:58.486Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "from": "accounts@fakelit.com",
+    "to": "customer@example.com",
+    "subject": "Fakelit.com Account Update",
+    "messageId": "mock-email-1751892059490",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:40:59.490Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "from": "v.helems@fakelit.com",
+    "to": "partner@example.com",
+    "subject": "Fakelit.com Partnership Opportunity",
+    "messageId": "mock-email-1751892060495",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:00.495Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "from": "billing@fakelit.com",
+    "to": "invoice@example.com",
+    "subject": "Fakelit.com Invoice #12345",
+    "messageId": "mock-email-1751892061502",
+    "status": "mock-sent",
+    "timestamp": "2025-07-07T12:41:01.502Z",
+    "poweredBy": "Fakelit.com"
+  },
+  {
+    "from": "customer@example.com",
+    "to": "support@fakelit.com",
+    "forwardedTo": "marquibelbrooks@gmail.com",
+    "subject": "Test Support Email",
+    "messageId": "mock-forward-1751892072679",
+    "status": "mock-forwarded",
+    "timestamp": "2025-07-07T12:41:12.679Z",
+    "poweredBy": "Fakelit.com"
+  }
+]

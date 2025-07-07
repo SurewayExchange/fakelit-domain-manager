@@ -1,0 +1,585 @@
+/* Lifelike Avatar Styles */
+.lifelike-avatar {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.lifelike-avatar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Avatar Face */
+.avatar-face {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto 0;
+    background: var(--avatar-skin-tone, #f4d03f);
+    border-radius: 50%;
+    box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Eyes */
+.avatar-eyes {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eye {
+    width: 30px;
+    height: 30px;
+    background: #2c3e50;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.eye::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+/* Eye Expressions */
+.eye.normal::after {
+    transform: translate(2px, 2px);
+}
+
+.eye.focused::after {
+    transform: translate(1px, 1px);
+    background: #3498db;
+}
+
+.eye.worried::after {
+    transform: translate(3px, 1px);
+    background: #e74c3c;
+}
+
+.eye.caring::after {
+    transform: translate(2px, 2px);
+    background: #2ecc71;
+}
+
+.eye.encouraging::after {
+    transform: translate(1px, 1px);
+    background: #f39c12;
+}
+
+.eye.bright::after {
+    transform: translate(2px, 2px);
+    background: #f1c40f;
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+}
+
+.eye.soft::after {
+    transform: translate(2px, 2px);
+    background: #ecf0f1;
+}
+
+.eye.intense::after {
+    transform: translate(1px, 1px);
+    background: #34495e;
+}
+
+.eye.wide::after {
+    transform: translate(2px, 2px);
+    background: #fff;
+    width: 15px;
+    height: 15px;
+}
+
+.eye.distant::after {
+    transform: translate(4px, 2px);
+    background: #bdc3c7;
+}
+
+/* Blinking Animation */
+.eye.blinking {
+    animation: blink 0.15s ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.1); }
+}
+
+/* Mouth */
+.avatar-mouth {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 20px;
+    border-radius: 0 0 40px 40px;
+    background: #e74c3c;
+    transition: all 0.3s ease;
+}
+
+/* Mouth Expressions */
+.avatar-mouth.neutral {
+    height: 8px;
+    border-radius: 20px;
+    background: #34495e;
+}
+
+.avatar-mouth.slightly_open {
+    height: 12px;
+    border-radius: 0 0 20px 20px;
+    background: #34495e;
+}
+
+.avatar-mouth.slightly_frown {
+    height: 8px;
+    border-radius: 20px 20px 0 0;
+    background: #34495e;
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.avatar-mouth.gentle_smile {
+    height: 15px;
+    border-radius: 0 0 40px 40px;
+    background: #27ae60;
+}
+
+.avatar-mouth.warm_smile {
+    height: 18px;
+    border-radius: 0 0 45px 45px;
+    background: #27ae60;
+    box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
+}
+
+.avatar-mouth.smile {
+    height: 16px;
+    border-radius: 0 0 42px 42px;
+    background: #27ae60;
+}
+
+.avatar-mouth.open_smile {
+    height: 20px;
+    border-radius: 0 0 50px 50px;
+    background: #27ae60;
+}
+
+/* Eyebrows */
+.avatar-eyebrows {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eyebrow {
+    width: 35px;
+    height: 8px;
+    background: #2c3e50;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Eyebrow Expressions */
+.eyebrow.relaxed {
+    transform: rotate(0deg);
+}
+
+.eyebrow.attentive {
+    transform: rotate(5deg);
+}
+
+.eyebrow.furrowed {
+    transform: rotate(-10deg);
+    height: 10px;
+}
+
+.eyebrow.raised {
+    transform: rotate(15deg);
+}
+
+.eyebrow.soft {
+    transform: rotate(2deg);
+    height: 6px;
+}
+
+.eyebrow.straight {
+    transform: rotate(0deg);
+    height: 8px;
+}
+
+.eyebrow.open {
+    transform: rotate(8deg);
+}
+
+.eyebrow.slightly_furrowed {
+    transform: rotate(-5deg);
+    height: 9px;
+}
+
+/* Hair Styles */
+.avatar-hair {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 100px;
+    border-radius: 50% 50% 0 0;
+    transition: all 0.3s ease;
+}
+
+.hair-long_brown .avatar-hair {
+    background: #8B4513;
+    height: 120px;
+    border-radius: 50% 50% 0 0;
+}
+
+.hair-short_black .avatar-hair {
+    background: #2c3e50;
+    height: 60px;
+    border-radius: 50% 50% 0 0;
+}
+
+.hair-long_black .avatar-hair {
+    background: #2c3e50;
+    height: 120px;
+    border-radius: 50% 50% 0 0;
+}
+
+.hair-short_brown .avatar-hair {
+    background: #8B4513;
+    height: 60px;
+    border-radius: 50% 50% 0 0;
+}
+
+.hair-medium_brown .avatar-hair {
+    background: #8B4513;
+    height: 90px;
+    border-radius: 50% 50% 0 0;
+}
+
+.hair-long_blonde .avatar-hair {
+    background: #F4D03F;
+    height: 120px;
+    border-radius: 50% 50% 0 0;
+}
+
+/* Accessories */
+.avatar-accessories {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.accessory-glasses::before {
+    content: '👓';
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    z-index: 10;
+}
+
+.accessory-necklace::before {
+    content: '💎';
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    z-index: 10;
+}
+
+.accessory-watch::before {
+    content: '⌚';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.accessory-stethoscope::before {
+    content: '🩺';
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.accessory-name_tag::before {
+    content: '🏷️';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    z-index: 10;
+}
+
+/* Body */
+.avatar-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 200px;
+}
+
+.avatar-torso {
+    width: 100px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50px 50px 0 0;
+    transition: all 0.3s ease;
+}
+
+/* Outfit Styles */
+.outfit-business_casual .avatar-torso {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.outfit-casual_professional .avatar-torso {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.outfit-soft_professional .avatar-torso {
+    background: linear-gradient(135deg, #e8f4fd 0%, #d5e8f7 100%);
+}
+
+.outfit-business .avatar-torso {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.outfit-medical_professional .avatar-torso {
+    background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+}
+
+.outfit-welcoming .avatar-torso {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+/* Arms */
+.avatar-arms {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arm {
+    width: 20px;
+    height: 60px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.left-arm {
+    background: var(--avatar-skin-tone, #f4d03f);
+    transform: rotate(-15deg);
+}
+
+.right-arm {
+    background: var(--avatar-skin-tone, #f4d03f);
+    transform: rotate(15deg);
+}
+
+/* Status Indicators */
+.avatar-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.speaking-indicator {
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 15px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.speaking-indicator.typing,
+.speaking-indicator.speaking {
+    opacity: 1;
+}
+
+.emotion-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #27ae60;
+    transition: all 0.3s ease;
+}
+
+/* Expression Classes */
+.expression-neutral .avatar-face {
+    transform: scale(1);
+}
+
+.expression-listening .avatar-face {
+    transform: scale(1.02);
+}
+
+.expression-concerned .avatar-face {
+    transform: scale(1.01);
+}
+
+.expression-encouraging .avatar-face {
+    transform: scale(1.03);
+}
+
+.expression-thoughtful .avatar-face {
+    transform: scale(0.98);
+}
+
+.expression-empathetic .avatar-face {
+    transform: scale(1.02);
+}
+
+.expression-professional .avatar-face {
+    transform: scale(1);
+}
+
+.expression-supportive .avatar-face {
+    transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes subtle-breathing {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+@keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+/* Fallback Avatar */
+.fallback-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+
+.fallback-face {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.fallback-message {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lifelike-avatar {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .avatar-face {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .avatar-eyes {
+        width: 90px;
+        top: 45px;
+    }
+    
+    .eye {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .avatar-mouth {
+        bottom: 35px;
+        width: 30px;
+    }
+}
+
+/* Voice Audio Styles */
+.avatar-audio {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.avatar-audio audio {
+    width: 100%;
+    height: 100%;
+}
+
+/* Loading States */
+.lifelike-avatar.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Error States */
+.lifelike-avatar.error {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+/* Success States */
+.lifelike-avatar.success {
+    animation: success-glow 0.5s ease-in-out;
+}
+
+@keyframes success-glow {
+    0% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+    50% { box-shadow: 0 20px 40px rgba(46, 204, 113, 0.5); }
+    100% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+} 

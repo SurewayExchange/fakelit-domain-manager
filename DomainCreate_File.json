@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-07-07T15:14:27.481Z",
+  "totalApplications": 0,
+  "totalDomains": 0,
+  "cloudways": {
+    "applications": [],
+    "count": 0
+  },
+  "enom": {
+    "domains": [],
+    "count": 0
+  },
+  "summary": {
+    "totalServers": 0,
+    "activeApplications": 0,
+    "expiringDomains": 0
+  },
+  "reportGenerated": "2025-07-07T15:14:27.482Z",
+  "recommendations": [
+    {
+      "type": "info",
+      "message": "No Cloudways applications found",
+      "action": "Consider deploying applications to Cloudways"
+    },
+    {
+      "type": "info",
+      "message": "No Enom domains found",
+      "action": "Consider registering domains through Enom"
+    }
+  ]
+}

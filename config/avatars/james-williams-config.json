@@ -1,0 +1,42 @@
+{
+  "id": "james-williams",
+  "name": "James Williams",
+  "title": "Career & Life Coach",
+  "specialty": "Career & Life Transitions",
+  "avatar": {
+    "gender": "male",
+    "style": "confident",
+    "hair": "short_brown",
+    "outfit": "business",
+    "accessories": [
+      "watch"
+    ],
+    "skinTone": "light",
+    "eyeColor": "blue",
+    "fallbackImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+  },
+  "voice": {
+    "provider": "elevenlabs",
+    "voiceId": "pFZP5JQG7iQjVQuS4ng1",
+    "settings": {
+      "stability": 0.65,
+      "similarity_boost": 0.85
+    }
+  },
+  "personality": {
+    "traits": [
+      "motivational",
+      "practical",
+      "goal-oriented"
+    ],
+    "communication": "energetic, action-oriented, results-focused",
+    "approach": "Solution-focused with career development"
+  },
+  "apiEndpoints": {
+    "avatar": "/api/avatar/counselor/james-williams",
+    "mood": "/api/avatar/counselor/james-williams/mood/:mood",
+    "animations": "/api/avatar/counselor/james-williams/animations",
+    "voice": "/api/voice/synthesize/james-williams",
+    "lipSync": "/api/lipsync/generate"
+  }
+}

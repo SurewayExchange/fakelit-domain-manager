@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page - CareConnect</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container" style="padding: 50px;">
+        <h1>Test Page</h1>
+        
+        <div style="margin: 20px 0;">
+            <button class="btn-primary" onclick="testOpenChatModal()">Test Open Chat Modal</button>
+        </div>
+        
+        <div style="margin: 20px 0;">
+            <button class="btn-primary" onclick="testStartChat()">Test Start Chat</button>
+        </div>
+        
+        <div style="margin: 20px 0;">
+            <button class="btn-primary" onclick="testDirectModal()">Test Direct Modal</button>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3>Test Chat</h3>
+                <button class="modal-close" onclick="closeChatModal()">&times;</button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message counselor">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face" alt="Test Counselor">
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! This is a test message.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Type your message...">
+                    <button onclick="sendMessage()" class="btn-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/debug.js"></script>
+    
+    <script>
+        function testOpenChatModal() {
+            console.log('Testing openChatModal...');
+            if (typeof openChatModal === 'function') {
+                openChatModal();
+            } else {
+                console.error('openChatModal function not found');
+            }
+        }
+        
+        function testStartChat() {
+            console.log('Testing startChat...');
+            localStorage.setItem('selectedCounselor', 'test-counselor');
+            if (typeof openChatModal === 'function') {
+                openChatModal();
+            } else {
+                console.error('openChatModal function not found');
+            }
+        }
+        
+        function testDirectModal() {
+            console.log('Testing direct modal...');
+            const chatModal = document.getElementById('chatModal');
+            console.log('Chat modal element:', chatModal);
+            if (chatModal) {
+                chatModal.style.display = 'flex';
+                chatModal.classList.add('show');
+                console.log('Modal should be visible now');
+            } else {
+                console.error('Chat modal not found');
+            }
+        }
+        
+        function sendMessage() {
+            console.log('Send message clicked');
+            const input = document.getElementById('chatInput');
+            console.log('Input value:', input.value);
+        }
+        
+        // Test on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Test page loaded');
+            console.log('openChatModal function:', typeof openChatModal);
+            console.log('startChat function:', typeof startChat);
+        });
+    </script>
+</body>
+</html> 
